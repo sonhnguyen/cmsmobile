@@ -28,8 +28,12 @@
    
    <a class="item item-icon-left" href="#" ng-repeat="item in items">
 		<img ng-src="{{item.Image}}" style="width:50px;height:50px"/>
-		{{item.Name}}
-		<span class="badge badge-assertive">{{item.Price}}</span> 
+		{{item.Name}} 
+		<span class="badge badge-dark" ><strike>{{item.Price}}</strike></span>
+    <span class="badge badge-assertive" style="left: 20%;
+    right: 69%;
+">-{{item.Discount}}% Hot Sale</span> 
+<span class="badge badge-balanced" style=" right: 10%;">{{item.Price*(100-item.Discount)/100}}</span>
    </a>
 
 </div>
