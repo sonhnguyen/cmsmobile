@@ -1,11 +1,37 @@
-cms.controller('newsController', ['$scope','$state','$ionicPopover','$ionicPopup',
-  '$ionicLoading','$ionicModal','$ionicHistory',
-  function ($scope,$state,$ionicPopover,$ionicPopup,$ionicLoading,$ionicModal,$ionicHistory) {
+cms
+.factory('DataService2', function($q, $timeout) {
 
-$scope.listnews = [
-{title: 'Australia quyết tiếp tục do thám trên Biển Đông', content: 'Bộ Quốc phòng Australia ngày 17/12 tuyên bố nước này sẽ không nhượng bộ trước áp lực từ Trung Quốc và sẽ tiếp tục các chuyến tuần tra trên các đảo nhân tạo phi pháp ở Biển Đông.', like: 'Like'}
-];
+    var getNews = function() {
 
+        var deferred = $q.defer();
+		var list =[];
+		var ref = new Firebase('https://glowing-torch-2466.firebaseio.com/news');
+		ref.on("value", function(snapshot) {
+		  snapshot.forEach(function(snap){
+			 list.push(snap.val()); 
+		  });
+		  deferred.resolve(list);
+		}, function (errorObject) {
+		  console.log("The read failed: " + errorObject.code);
+		});
+        return deferred.promise;
+    };
+
+    return {
+        getNews : getNews
+    }
+})
+
+
+.controller('newsController', ['$scope','$state','$ionicPopover','$ionicPopup',
+  '$ionicLoading','$ionicModal','$ionicHistory', 'DataService2', 
+  function ($scope,$state,$ionicPopover,$ionicPopup,$ionicLoading,$ionicModal,$ionicHistory, DataService2) {
+		$scope.listnews = [];
+		DataService2.getNews().then(
+			function(news) {
+				$scope.listnews = news;
+			}
+		)
 $ionicModal.fromTemplateUrl('view/addNewsPage.html', function(modal) {
     $scope.newsModal = modal;
   }, {

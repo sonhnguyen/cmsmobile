@@ -4,9 +4,9 @@
   <ion-list>
     <ion-item ng-repeat="recipe in recipes">
         <a class="item item-thumbnail-left" href="#">
-	      <img src="http://tuhoclambanh.com/index.php?t=ajax&p=thumb&src=http://tuhoclambanh.com/upload/news/banh-tieu.jpg&w=150&h=100">
-	      <h2>{{recipe.title}}</h2>
-	      <p>{{recipe.content}}</p>
+	      <img ng-src="{{recipe.Image}}">
+	      <h2>{{recipe.Title}}</h2>
+	      <p>{{recipe.Content}}</p>
     	</a>
     	<div class="item tabs tabs-secondary tabs-icon-left">
                     <a class="tab-item" ng-click="like($index)"> <!-- ng-click="likeBlog(item)" -->
