@@ -1,4 +1,4 @@
-starter.controller('menuController', ['$scope','$state','$ionicPopover','$ionicPopup',
+cms.controller('menuController', ['$scope','$state','$ionicPopover','$ionicPopup',
 	'$ionicLoading','$ionicModal','$ionicHistory',
 	function ($scope,$state,$ionicPopover,$ionicPopup,$ionicLoading,$ionicModal,$ionicHistory) {
 
