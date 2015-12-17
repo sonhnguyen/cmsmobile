@@ -1,28 +1,134 @@
 <ion-view style="background-color: #F2F2F2" title="Home">
     <ion-content>
        <div class="list card padding-createblog-button" ng-repeat="cake in cakes">
-            <div class="item item-avatar avatar-custom">
-                    <img ng-src="{{cake.Image}}"> 
-                    <h2  style="color: #4DADAF; font-weight: 500">{{cake.Name}}</h2> 
-                    
-                    <button class="button button-clear" style="position:absolute;right:2px;top:10px;" ng-click="cakeDetail()"> <!-- ng-click="redirEdit(item.id)" -->
+         <div class = "item">
 
-                        <i class="icon ion-chevron-right" style="color: #55B6B8" href="#/detail"></i>
-                    </button>
+            <div class="item  item-thumbnail-left ">
+                <img ng-src="{{cake.Image}}"> 
+                <h2  style="color: #4DADAF; font-weight: 500; padding-top:30px">{{cake.Name}}
+                <p class = "icon ion-checkmark-circled custom-icon"></p></h2> 
+                
+                
+                <button class="button button-clear" style="position:absolute;right:2px;top:10px;" ng-click="cakeDetail()"> <!-- ng-click="redirEdit(item.id)" -->
+
+                    <i class="icon ion-chevron-right" style="color: #55B6B8" style="top:25px" href="#/"></i>
+                </button>
             </div>
+        <p style="padding-left:70px;padding-right:70px;">
+            Ne homero ceteros per, tamquam equidem reprimique ne pri. At mel putant eleifend voluptatibus, has nostrum eleifend id. Cu pri munere abhorreant, pri detraxit assueverit dissentias ei. In nisl agam eum, in tempor quodsi ornatus vis, eu eam delenit ceteros. Congue facete omittam te mel, duo affert viderer ornatus ne. Possit virtute labores ad ius, eam an tritani maluisset. Eu per esse viris voluptaria, ludus nostro quodsi ea cum.
 
-            <div class="item tabs tabs-secondary tabs-icon-left">
-                    <a class="tab-item" ng-click=""> <!-- ng-click="likeBlog(item)" -->
-                        <i class="icon ion-thumbsup"></i>
-                        Like
-                    </a>
-                    <a class="tab-item" ng-click=""> <!-- ng-click="shareBlog(item)" -->
-                        <i class="icon ion-share"></i>
-                        Share
-                    </a>
-            </div>    
+        </p>
+        <div class="item tabs tabs-secondary tabs-icon-left" >
+                <a class="tab-item" ng-click=""> <!-- ng-click="likeBlog(item)" -->
+                    <i class="icon ion-thumbsup"></i>
+                    Like
+                </a>
+                <a class="tab-item" ng-click=""> <!-- ng-click="shareBlog(item)" -->
+                    <i class="icon ion-share"></i>
+                    Share
+                </a>
+                <a class="tab-item" ng-click=""> <!-- ng-click="shareBlog(item)" -->
+                    <i class="icon ion-android-cart"></i>
+                    Add to cart
+                </a>
+        </div>    
        </div>
 
+       <div class = "item">
 
-	</ion-content>
+            <div class="item  item-thumbnail-left ">
+                <img ng-src="https://saigoncupcake.files.wordpress.com/2014/02/959953390_1374303766.jpg"> 
+                <h2  style="color: #4DADAF; font-weight: 500; padding-top:30px">Cupcake</h2> 
+                <p class = "icon ion-checkmark-circled custom-icon"></p></h2> 
+                <button class="button button-clear" style="position:absolute;right:2px;top:10px;" ng-click="cakeDetail()"> <!-- ng-click="redirEdit(item.id)" -->
+
+                    <i class="icon ion-chevron-right" style="color: #55B6B8" style="top:25px" href="#/"></i>
+                </button>
+            </div>
+        <p style="padding-left:70px;padding-right:70px;">
+            Hinc inimicus eos id, diceret perpetua vix in. Ei vix purto option, vix ad nominavi corrumpit. Ut utamur propriae accusata mel, ex mea fabulas tractatos omittantur. Sea no nihil reformidans, ius eu graece eripuit epicurei, nostrud commune principes in sit. Eam amet disputationi ne.
+
+
+        </p>
+        <div class="item tabs tabs-secondary tabs-icon-left" >
+                <a class="tab-item" ng-click=""> <!-- ng-click="likeBlog(item)" -->
+                    <i class="icon ion-thumbsup"></i>
+                    Like
+                </a>
+                <a class="tab-item" ng-click=""> <!-- ng-click="shareBlog(item)" -->
+                    <i class="icon ion-share"></i>
+                    Share
+                </a>
+                <a class="tab-item" ng-click=""> <!-- ng-click="shareBlog(item)" -->
+                    <i class="icon ion-android-cart"></i>
+                    Add to cart
+                </a>
+        </div>    
+       </div>
+       <div class = "item">
+
+            <div class="item  item-thumbnail-left ">
+                <img ng-src="http://foodnetwork.sndimg.com/content/dam/images/food/fullset/2014/3/13/1/FNK_Confetti-Birthday-Cake-Slice_s4x3.jpg"> 
+                <h2  style="color: #4DADAF; font-weight: 500; padding-top:30px">Birthday Cake</h2> 
+                
+                <button class="button button-clear" style="position:absolute;right:2px;top:10px;" ng-click="cakeDetail()"> <!-- ng-click="redirEdit(item.id)" -->
+
+                    <i class="icon ion-chevron-right" style="color: #55B6B8" style="top:25px" href="#/"></i>
+                </button>
+            </div>
+        <p style="padding-left:70px;padding-right:70px;">
+            Dicant placerat intellegam no nec. Nam cu error integre suscipit. Tollit delicata at eum, stet reque altera in vel, ius adhuc nostrum cu. Semper aliquid erroribus ne pro. Vix movet nonumes deleniti ex, id nec illud liber. An dicit dicam per, falli periculis eum ne, ex pro exerci maluisset torquatos.
+
+
+        </p>
+        <div class="item tabs tabs-secondary tabs-icon-left" >
+                <a class="tab-item" ng-click=""> <!-- ng-click="likeBlog(item)" -->
+                    <i class="icon ion-thumbsup"></i>
+                    Like
+                </a>
+                <a class="tab-item" ng-click=""> <!-- ng-click="shareBlog(item)" -->
+                    <i class="icon ion-share"></i>
+                    Share
+                </a>
+                <a class="tab-item" ng-click=""> <!-- ng-click="shareBlog(item)" -->
+                    <i class="icon ion-android-cart"></i>
+                    Add to cart
+                </a>
+        </div>    
+       </div>
+       <div class = "item">
+
+            <div class="item  item-thumbnail-left ">
+                <img ng-src="http://toinayangi.vn/wp-content/uploads/2015/01/cach-lam-Molten-Lava-Cake-3.jpg"> 
+                <h2  style="color: #4DADAF; font-weight: 500; padding-top:30px">Molten Lava Cake</h2> 
+                <p class = "icon ion-checkmark-circled custom-icon"></p></h2> 
+                <button class="button button-clear" style="position:absolute;right:2px;top:10px;" ng-click="cakeDetail()"> <!-- ng-click="redirEdit(item.id)" -->
+
+                    <i class="icon ion-chevron-right" style="color: #55B6B8" style="top:25px" href="#/"></i>
+                </button>
+            </div>
+        <p style="padding-left:70px;padding-right:70px;">
+            Hinc inimicus eos id, diceret perpetua vix in. Ei vix purto option, vix ad nominavi corrumpit. Ut utamur propriae accusata mel, ex mea fabulas tractatos omittantur. Sea no nihil reformidans, ius eu graece eripuit epicurei, nostrud commune principes in sit. Eam amet disputationi ne.
+
+
+        </p>
+        <div class="item tabs tabs-secondary tabs-icon-left" >
+                <a class="tab-item" ng-click=""> <!-- ng-click="likeBlog(item)" -->
+                    <i class="icon ion-thumbsup"></i>
+                    Like
+                </a>
+                <a class="tab-item" ng-click=""> <!-- ng-click="shareBlog(item)" -->
+                    <i class="icon ion-share"></i>
+                    Share
+                </a>
+                <a class="tab-item" ng-click=""> <!-- ng-click="shareBlog(item)" -->
+                    <i class="icon ion-android-cart"></i>
+                    Add to cart
+                </a>
+        </div>    
+       </div>
+   </div>
+
+
+    </ion-content>
 </ion-view>
