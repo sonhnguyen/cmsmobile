@@ -3,7 +3,9 @@ cms.controller('cakedetailController', ['$scope','$state','$ionicPopover','$ioni
 	function ($scope,$state,$ionicPopover,$ionicPopup,$ionicLoading,$ionicModal,$ionicHistory) {
 
 
-
+$scope.backtoMenu = function() {
+        $state.go("menu");
+    }
 
 
 
