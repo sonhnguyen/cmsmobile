@@ -35,7 +35,7 @@ cms
 		)
 
 
- $scope.changeState = function() {
+ $scope.cakeDetail  = function() {
         $state.go("cakedetail");
     }
 }]);
