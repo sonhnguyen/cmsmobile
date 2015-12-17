@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
   <link href="lib/ionic/css/ionic.css" rel="stylesheet">
   <link rel="stylesheet" href="css/ng-tags-input.css">    
   <link rel="stylesheet" href="css/ng-tags-input.bootstrap.css">    
@@ -27,6 +27,7 @@
   <!-- APP.JS -->
   <script src="js/jquery/jquery-1.11.1.min.js"></script>   
   <script src="js/app.js"></script>
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 
   <!-- tags -->
   <script type="text/javascript" src="js/include/ng-tags-input.js"></script>
@@ -38,10 +39,11 @@
     <script src="js/controller/menuController.js"></script>
     <script src="js/controller/mainController.js"></script>
     <script src="js/controller/dealController.js"></script>
-
     <script src="js/controller/newsController.js"></script>
-    <script src="js/controller/addnewsController.js"></script>
+    <script src="js/controller/addNewsController.js"></script>
     <script src="js/controller/recipeController.js"></script>
+    <script src="js/controller/cakedetailController.js"></script>
+    <script src="js/controller/showNewsController.js"></script>
   </head>
 
   <body ng-app="cms" ng-controller="mainController"> 
@@ -55,16 +57,16 @@
 
     <div id="myTab" class="tabs-striped  has-tabs tabs-color-calm">
         <div class="tabs ">
-          <a id="menuTab" class="tab-item active"  href="#/menu" ng-click="viewMenu()">
+          <a id="menuTab" class="tab-item active" href="#/menu" ng-click="viewMenu()">
             <i class="icon ion-drag"></i>
             Menu
           </a>
-          <a id="dealTab" class="tab-item" href="#/deal" ng-click="viewDeal()" >
+          <a id="dealTab" class="tab-item" href="#/deal" ng-click="viewDeal()">
             <i class="icon ion-bag"></i>
             Deal
           </a>
 
-          <a id="newsTab" class="tab-item" href="#/news"ng-click="viewNews()" >
+          <a id="newsTab" class="tab-item" href="#/news" ng-click="viewNews()">
             <i id="notifyIcon" class="icon ion-alert"></i>
             News
           </a>

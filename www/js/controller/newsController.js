@@ -1,45 +1,41 @@
-cms.controller('newsController', ['$scope','$state','$ionicPopover','$ionicPopup',
-  '$ionicLoading','$ionicModal','$ionicHistory',
-  function ($scope,$state,$ionicPopover,$ionicPopup,$ionicLoading,$ionicModal,$ionicHistory) {
+cms
+.factory('DataService2', function($q, $timeout) {
 
-$scope.listnews = [
-{title: 'Australia quyết tiếp tục do thám trên Biển Đông', content: 'Bộ Quốc phòng Australia ngày 17/12 tuyên bố nước này sẽ không nhượng bộ trước áp lực từ Trung Quốc và sẽ tiếp tục các chuyến tuần tra trên các đảo nhân tạo phi pháp ở Biển Đông.', like: 'Like'}
-];
+    var getNews = function() {
 
-$ionicModal.fromTemplateUrl('view/addNewsPage.html', function(modal) {
-    $scope.newsModal = modal;
-  }, {
-    scope: $scope,
-    animation: 'slide-in-up'
-  });
+        var deferred = $q.defer();
+		var list =[];
+		var ref = new Firebase('https://glowing-torch-2466.firebaseio.com/news');
+		ref.once("value", function(snapshot) {
+		  snapshot.forEach(function(snap){
+			 list.push(snap.val()); 
+		  });
+		  deferred.resolve(list);
+		}, function (errorObject) {
+		  console.log("The read failed: " + errorObject.code);
+		});
+        return deferred.promise;
+    };
 
-$ionicModal.fromTemplateUrl('view/showNewsPage.html', function(modal) {
-    $scope.showNewsModal = modal;
-  }, {
-    scope: $scope,
-    animation: 'slide-in-up'
-  });
+    return {
+        getNews : getNews
+    }
+})
 
-$scope.createNews = function(news) {
-    $scope.listnews.push({
-      title: news.title,
-      content: news.content,
-      like: 'Like'
-    });
-    $scope.newsModal.hide();
-    news.title = "";
-    news.content = "";
-    console.log($scope.listnews)
-  };
 
+.controller('newsController', ['$scope','$state','$ionicPopover','$ionicPopup',
+  '$ionicLoading','$ionicModal','$ionicHistory', 'DataService2', 
+  function ($scope,$state,$ionicPopover,$ionicPopup,$ionicLoading,$ionicModal,$ionicHistory, DataService2) {
+		$scope.listnews = [];
+		DataService2.getNews().then(
+			function(news) {
+				$scope.listnews = news;
+        console.log(news);
+			}
+		)
 $scope.addNews = function()
 {
-  $scope.newsModal.show();
-}
-
-$scope.backToNews = function()
-{
-	$scope.newsModal.hide();
+  $state.go('addNews')
 }
 
 $scope.share= function()
@@ -58,9 +54,10 @@ $scope.like = function(n)
 
 $scope.showNews = function(n)
 {
-	$scope.showNewsModal.title = $scope.listnews[n]['title']
-    $scope.showNewsModal.content = $scope.listnews[n]['content']
-	$scope.showNewsModal.show();
+	//$scope.showNewsModal.title = $scope.listnews[n]['title']
+  //$scope.showNewsModal.content = $scope.listnews[n]['content']
+	//$scope.showNewsModal.show();
+  $state.go('showNews',{title:$scope.listnews[n]['Title'], content:$scope.listnews[n]['Content']});
 }
 
 }]);

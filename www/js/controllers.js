@@ -6,7 +6,8 @@ angular.module('cms.controllers', [])
 .controller('dealController',function($scope){})
 .controller('newsController',function($scope){})
 .controller('addNewsController',function($scope){})
-
+.controller('detailcakeController',function($scope){})
+.controller('cakedetailController',function($scope){})
 .controller('recipeController',function($scope){})
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called

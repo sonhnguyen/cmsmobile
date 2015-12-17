@@ -1,19 +1,41 @@
-cms.controller('menuController', ['$scope','$state','$ionicPopover','$ionicPopup',
-	'$ionicLoading','$ionicModal','$ionicHistory',
-	function ($scope,$state,$ionicPopover,$ionicPopup,$ionicLoading,$ionicModal,$ionicHistory) {
+cms
+.factory('DataService3', function($q, $timeout) {
+
+    var getCakes = function() {
+
+        var deferred = $q.defer();
+		var list =[];
+		var ref = new Firebase('https://glowing-torch-2466.firebaseio.com/cakes/');
+		ref.on("value", function(snapshot) {
+		  snapshot.forEach(function(snap){
+			 list.push(snap.val()); 
+		  });
+		  deferred.resolve(list);
+		}, function (errorObject) {
+		  console.log("The read failed: " + errorObject.code);
+		});
+        return deferred.promise;
+    };
+
+    return {
+        getCakes : getCakes
+    }
+})
+
+
+
+.controller('menuController', ['$scope','$state','$ionicPopover','$ionicPopup',
+	'$ionicLoading','$ionicModal','$ionicHistory', 'DataService3',
+	function ($scope,$state,$ionicPopover,$ionicPopup,$ionicLoading,$ionicModal,$ionicHistory, DataService3) {
+		$scope.cakes = [];
+		DataService3.getCakes().then(
+			function(data) {
+				$scope.cakes = data;
+			}
+		)
 
 $scope.cakeDetail = function() 
 {
-    var confirmPopup = $ionicPopup.confirm
-    (
-    	{
-      		title: 'Momofuku Cake',
-      		template: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum'
-    	}
-    );
-    confirmPopup.then(function(res) 
-    {
-      $scope.closePopover();
-    });
+    console.log('12312');
 };
 }]);

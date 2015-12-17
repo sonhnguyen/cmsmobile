@@ -1,12 +1,12 @@
-<a class="button icon-right ion-plus button-calm" style="margin-top:50px;margin-left:50px" ng-click="addNews()">Add News</a>
+<a class="button ion-plus button-calm" style="margin-top:50px;margin-left:50px" ng-click="addNews()"></a>
 
 <ion-content style="margin-top:120px; margin-bottom:50px">
   <ion-list>
     <ion-item ng-repeat="news in listnews">
         <a class="item item-thumbnail-left" ng-click="showNews($index)" href="#">
-	      <img src="http://img.v3.news.zdn.vn/w210/Uploaded/aolnpvp/2015_12_17/may%20bay.jpg">
-	      <h2>{{news.title}}</h2>
-	      <p>{{news.content}}</p>
+	      <img ng-src="{{news.Image}}">
+	      <h2>{{news.Title}}</h2>
+	      <p>{{news.Content}}</p>
     	</a>
     	<div class="item tabs tabs-secondary tabs-icon-left">
                     <a class="tab-item" ng-click="like($index)"> <!-- ng-click="likeBlog(item)" -->
