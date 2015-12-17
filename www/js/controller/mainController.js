@@ -1,10 +1,12 @@
 cms.controller('mainController', ['$scope','$state','$ionicPopover','$ionicPopup','$ionicLoading','$ionicModal','$ionicHistory',function ($scope,$state,$ionicPopover,$ionicPopup,$ionicLoading,$ionicModal,$ionicHistory) {
 
 $scope.viewMenu = function($event){
+    
     $('#menuTab').addClass('active');
     $('#dealTab').removeClass('active');
     $('#newsTab').removeClass('active');
     $('#recipeTab').removeClass('active');
+    
   };
 
 $scope.viewDeal = function($event){
