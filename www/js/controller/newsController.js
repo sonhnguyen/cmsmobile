@@ -6,7 +6,7 @@ cms
         var deferred = $q.defer();
 		var list =[];
 		var ref = new Firebase('https://glowing-torch-2466.firebaseio.com/news');
-		ref.on("value", function(snapshot) {
+		ref.once("value", function(snapshot) {
 		  snapshot.forEach(function(snap){
 			 list.push(snap.val()); 
 		  });
@@ -60,12 +60,7 @@ $scope.createNews = function(news) {
 
 $scope.addNews = function()
 {
-  $scope.newsModal.show();
-}
-
-$scope.backToNews = function()
-{
-	$scope.newsModal.hide();
+  $state.go('addNews')
 }
 
 $scope.share= function()
@@ -84,9 +79,10 @@ $scope.like = function(n)
 
 $scope.showNews = function(n)
 {
-	$scope.showNewsModal.title = $scope.listnews[n]['title']
-    $scope.showNewsModal.content = $scope.listnews[n]['content']
-	$scope.showNewsModal.show();
+	//$scope.showNewsModal.title = $scope.listnews[n]['title']
+  //$scope.showNewsModal.content = $scope.listnews[n]['content']
+	//$scope.showNewsModal.show();
+  $state.go('showNews',{title:$scope.listnews[n]['Title'], content:$scope.listnews[n]['Content']});
 }
 
 }]);

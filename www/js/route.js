@@ -23,9 +23,15 @@ cms.config(function($stateProvider, $urlRouterProvider) {
             controller: "dealController"
         })
         .state("news", {
+            params: {
+                title:{},
+                content:{}
+            },
             url: "/news",
             templateUrl: "view/newsPage.html",
-            controller: "newsController"
+            controller: "newsController",
+            data: {title:{},
+                content:{}}
         })
         .state("recipe", {
             params: {
@@ -37,9 +43,27 @@ cms.config(function($stateProvider, $urlRouterProvider) {
             // data: {'blogid':'blogid'}
     })
         .state("addNews",{
+            params: {
+                title:{},
+                content:{}
+            },
             url: "/addNews",
             templateUrl: "view/addNewsPage.html",
-            controller: "addNewsController"
+            controller: "addNewsController",
+            data: {title:{},
+                content:{}}
+        })
+        .state("showNews",{
+             params: {
+                title:{},
+                content:{}
+            },
+
+            url: "/showNews",
+            templateUrl: "view/showNewsPage.html",
+            controller: "showNewsController",
+            data: {title:{},
+                content:{}}
         });
 
   // if none of the above states are matched, use this as the fallback

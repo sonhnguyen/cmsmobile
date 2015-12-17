@@ -9,6 +9,4 @@ $scope.backtoMenu = function() {
 
 
 
-
-
 }]);
