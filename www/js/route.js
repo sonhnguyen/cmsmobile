@@ -8,17 +8,17 @@ cms.config(function($stateProvider, $urlRouterProvider) {
 
      .state("menu", {
             url: "/menu",
-            templateUrl: "view/menu.html",
+            templateUrl: "view/menuPage.html",
             controller: "menuController"
         })
         .state("deal", {
             url: "/deal",
-            templateUrl: "view/deal.html",
+            templateUrl: "view/dealPage.html",
             controller: "dealController"
         })
         .state("news", {
             url: "/news",
-            templateUrl: "view/news.html",
+            templateUrl: "view/newsPage.html",
             controller: "newsController"
         })
         .state("recipe", {
@@ -26,7 +26,7 @@ cms.config(function($stateProvider, $urlRouterProvider) {
                 //blogid:{}
             },
             url: "/recipe",
-            templateUrl: "view/recipe.html",
+            templateUrl: "view/recipePage.html",
             controller: "recipeController",
             // data: {'blogid':'blogid'}
     });
