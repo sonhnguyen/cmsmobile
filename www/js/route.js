@@ -6,11 +6,17 @@ cms.config(function($stateProvider, $urlRouterProvider) {
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-     .state("menu", {
+     .state("menu",{
             url: "/menu",
             templateUrl: "view/menuPage.html",
             controller: "menuController"
         })
+     .state("detail", {
+            url: "/detail",
+            templateUrl: "view/cakeDetail.html",
+            controller: "cakedetailController"
+        })
+     
         .state("deal", {
             url: "/deal",
             templateUrl: "view/dealPage.html",

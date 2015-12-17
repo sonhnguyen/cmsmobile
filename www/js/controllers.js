@@ -4,8 +4,14 @@ angular.module('cms.controllers', [])
 .controller('mainController',function($scope){})
 .controller('menuController',function($scope){})
 .controller('dealController',function($scope){})
+<<<<<<< HEAD
 .controller('newsController',function($scope){})
 .controller('addNewsController',function($scope){})
+=======
+.controller('detailcakeController',function($scope){})
+
+.controller('cakedetailController',function($scope){})
+>>>>>>> 54946c1c4e95bbe8887bf6dfef31ba5c825a83c0
 
 .controller('recipeController',function($scope){})
 .controller('ChatsCtrl', function($scope, Chats) {
