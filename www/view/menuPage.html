@@ -3,9 +3,9 @@
        <div class="list card padding-createblog-button">
          <div class = "item">
 
-            <div class="item  item-thumbnail-left ">
-                <img ng-src="http://livforcake.com/wp-content/uploads/2015/11/baileys_hot_chocolate_bundt-thumb9-320x320.jpg"> 
-                <h2  style="color: #4DADAF; font-weight: 500; padding-top:30px">Momofuku cake
+            <div class="item  item-thumbnail-left " ng-repeat="cake in cakes">
+                <img ng-src="{{cake.Image}}"> 
+                <h2  style="color: #4DADAF; font-weight: 500; padding-top:30px">{{cake.Name}}
                 <p class = "icon ion-checkmark-circled custom-icon"></p></h2> 
                 
                 
