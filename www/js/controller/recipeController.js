@@ -54,7 +54,7 @@ $scope.showRecipe = function(n)
   //$scope.showNewsModal.title = $scope.listnews[n]['title']
   //$scope.showNewsModal.content = $scope.listnews[n]['content']
   //$scope.showNewsModal.show();
-  $state.go('showReipce',{title:$scope.recipes[n]['Title'], content:$scope.recipes[n]['Content']});
+  $state.go('showRecipe',{title:$scope.recipes[n]['Title'], content:$scope.recipes[n]['Content']});
 }
 
 }]);

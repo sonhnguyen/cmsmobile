@@ -1,4 +1,4 @@
-cms.controller('showNewsController', ['$scope','$stateParams','$state','$ionicPopover','$ionicPopup',
+cms.controller('showRecipeController', ['$scope','$stateParams','$state','$ionicPopover','$ionicPopup',
 	'$ionicLoading','$ionicModal','$ionicHistory',
 	function ($scope,$stateParams,$state,$ionicPopover,$ionicPopup,$ionicLoading,$ionicModal,$ionicHistory) {
 
