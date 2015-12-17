@@ -16,11 +16,4 @@ $scope.cakeDetail = function()
       $scope.closePopover();
     });
 };
-
-
-
-
-
-
-
 }]);
