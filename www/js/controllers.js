@@ -1,6 +1,9 @@
-angular.module('starter.controllers', [])
+angular.module('cms.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
+.controller('mainController',function($scope){})
+.controller('menuController',function($scope){})
+.controller('dealController',function($scope){})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
