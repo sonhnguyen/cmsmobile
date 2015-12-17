@@ -6,7 +6,7 @@ cms
         var deferred = $q.defer();
 		var list =[];
 		var ref = new Firebase('https://glowing-torch-2466.firebaseio.com/recipe/');
-		ref.on("value", function(snapshot) {
+		ref.once("value", function(snapshot) {
 		  snapshot.forEach(function(snap){
 			 list.push(snap.val()); 
 		  });
@@ -30,48 +30,31 @@ cms
 				$scope.recipes = recipes;
 			}
 		)
-$ionicModal.fromTemplateUrl('view/addRecipePage.html', function(modal) {
-    $scope.recipeModal = modal;
-  }, {
-    scope: $scope,
-    animation: 'slide-in-up'
-  });
-
-$scope.createRecipe = function(recipe) {
-    $scope.recipes.push({
-      title: recipe.title,
-      content: recipe.content,
-      like: 'Like'
-    });
-    $scope.recipeModal.hide();
-    recipe.title = "";
-    recipe.content = "";
-  };
-
 $scope.addRecipe = function()
 {
-  $scope.recipeModal.show();
-}
-
-$scope.backToRecipe = function()
-{
-	$scope.recipeModal.hide();
+  $state.go('addRecipe')
 }
 
 $scope.share= function()
 {
-	console.log("Share");
+  console.log("Share");
 }
 
 $scope.like = function(n)
 {
-	console.log("Like");
-	if($scope.recipes[n]['like'] == 'Like')
-		$scope.recipes[n]['like'] = 'Unlike';
-	else
-		$scope.recipes[n]['like'] = 'Like';
+  console.log("Like");
+  if($scope.recipes[n]['like'] == 'Like')
+    $scope.recipes[n]['like'] = 'Unlike';
+  else
+    $scope.recipes[n]['like'] = 'Like';
 }
 
-
+$scope.showRecipe = function(n)
+{
+  //$scope.showNewsModal.title = $scope.listnews[n]['title']
+  //$scope.showNewsModal.content = $scope.listnews[n]['content']
+  //$scope.showNewsModal.show();
+  $state.go('showReipce',{title:$scope.recipes[n]['Title'], content:$scope.recipes[n]['Content']});
+}
 
 }]);
