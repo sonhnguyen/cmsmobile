@@ -1,9 +1,9 @@
 <ion-view style="background-color: #F2F2F2" title="Home">
     <ion-content>
-       <div class="list card padding-createblog-button" ng-repeat="cake in cakes">
+       <div class="list card padding-createblog-button">
          <div class = "item">
 
-            <div class="item  item-thumbnail-left ">
+            <div class="item  item-thumbnail-left " ng-repeat="cake in cakes">
                 <img ng-src="{{cake.Image}}"> 
                 <h2  style="color: #4DADAF; font-weight: 500; padding-top:30px">{{cake.Name}}
                 <p class = "icon ion-checkmark-circled custom-icon"></p></h2> 
