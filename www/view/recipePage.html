@@ -1,0 +1,23 @@
+<a class="button icon-right ion-plus button-calm" style="margin-top:50px;margin-left:50px" ng-click="addRecipe()">Add Recipe</a>
+
+<ion-content style="margin-top:120px; margin-bottom:50px">
+  <ion-list>
+    <ion-item ng-repeat="recipe in recipes">
+        <a class="item item-thumbnail-left" href="#">
+	      <img src="http://tuhoclambanh.com/index.php?t=ajax&p=thumb&src=http://tuhoclambanh.com/upload/news/banh-tieu.jpg&w=150&h=100">
+	      <h2>{{recipe.title}}</h2>
+	      <p>{{recipe.content}}</p>
+    	</a>
+    	<div class="item tabs tabs-secondary tabs-icon-left">
+                    <a class="tab-item" ng-click="like($index)"> <!-- ng-click="likeBlog(item)" -->
+                        <i class="icon ion-thumbsup"></i>
+                        {{recipe.like}}
+                    </a>
+                    <a class="tab-item" ng-click="share()"> <!-- ng-click="shareBlog(item)" -->
+                        <i class="icon ion-share"></i>
+                        Share
+                    </a>
+            </div>    
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,28 @@
+<div class="modal">
+
+    <!-- Modal header bar -->
+    <ion-header-bar class="bar-secondary">
+      <h1 class="title">Add Recipe</h1>
+      <button class="button button-clear button-positive" ng-click="backToNews()">Back to Recipe</button>
+    </ion-header-bar>
+
+    <!-- Modal content area -->
+    <ion-content>
+
+      <form ng-submit="createRecipe(recipe)">
+        <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="Title" ng-model="recipe.title">
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="Content" ng-model="recipe.content">
+          </label>
+        </div>
+        <div class="padding">
+          <button type="submit" class="button button-block button-positive">Add Recipe</button>
+        </div>
+      </form>
+
+    </ion-content>
+
+  </div>

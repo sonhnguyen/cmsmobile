@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
   <link href="lib/ionic/css/ionic.css" rel="stylesheet">
   <link rel="stylesheet" href="css/ng-tags-input.css">    
   <link rel="stylesheet" href="css/ng-tags-input.bootstrap.css">    
@@ -40,6 +40,8 @@
     <script src="js/controller/dealController.js"></script>
 
     <script src="js/controller/newsController.js"></script>
+    <script src="js/controller/addnewsController.js"></script>
+    <script src="js/controller/recipeController.js"></script>
   </head>
 
   <body ng-app="cms" ng-controller="mainController"> 
@@ -62,11 +64,11 @@
             Deal
           </a>
 
-          <a id="newsTab" class="tab-item" href="#noti"ng-click="viewNews()" >
+          <a id="newsTab" class="tab-item" href="#/news"ng-click="viewNews()" >
             <i id="notifyIcon" class="icon ion-alert"></i>
             News
           </a>
-          <a id="recipeTab" class="tab-item" ng-click="viewRecipe()">
+          <a id="recipeTab" class="tab-item" href="#/recipe" ng-click="viewRecipe()">
             <i class="icon ion-gear-a"></i>
             Recipe
           </a>

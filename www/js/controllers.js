@@ -5,7 +5,9 @@ angular.module('cms.controllers', [])
 .controller('menuController',function($scope){})
 .controller('dealController',function($scope){})
 .controller('newsController',function($scope){})
+.controller('addNewsController',function($scope){})
 
+.controller('recipeController',function($scope){})
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.

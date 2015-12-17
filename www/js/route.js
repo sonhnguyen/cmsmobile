@@ -29,7 +29,12 @@ cms.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: "view/recipePage.html",
             controller: "recipeController",
             // data: {'blogid':'blogid'}
-    });
+    })
+        .state("addNews",{
+            url: "/addNews",
+            templateUrl: "view/addNewsPage.html",
+            controller: "addNewsController"
+        });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
