@@ -35,12 +35,14 @@ cms.config(function($stateProvider, $urlRouterProvider) {
         })
         .state("recipe", {
             params: {
-                //blogid:{}
+                title:{},
+                content:{}
             },
             url: "/recipe",
             templateUrl: "view/recipePage.html",
             controller: "recipeController",
-            // data: {'blogid':'blogid'}
+            data: {title:{},
+                content:{}}
     })
         .state("addNews",{
             params: {
@@ -62,6 +64,29 @@ cms.config(function($stateProvider, $urlRouterProvider) {
             url: "/showNews",
             templateUrl: "view/showNewsPage.html",
             controller: "showNewsController",
+            data: {title:{},
+                content:{}}
+        })
+        .state("addRecipe",{
+            params: {
+                title:{},
+                content:{}
+            },
+            url: "/addRecipe",
+            templateUrl: "view/addRecipePage.html",
+            controller: "addRecipeController",
+            data: {title:{},
+                content:{}}
+        })
+        .state("showRecipe",{
+             params: {
+                title:{},
+                content:{}
+            },
+
+            url: "/showRecipe",
+            templateUrl: "view/showRecipePage.html",
+            controller: "showRecipeController",
             data: {title:{},
                 content:{}}
         });

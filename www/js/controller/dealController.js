@@ -6,7 +6,7 @@ cms
         var deferred = $q.defer();
 		var list =[];
 		var ref = new Firebase('https://glowing-torch-2466.firebaseio.com/deals/');
-		ref.on("value", function(snapshot) {
+		ref.once("value", function(snapshot) {
 		  snapshot.forEach(function(snap){
 			 list.push(snap.val()); 
 		  });
