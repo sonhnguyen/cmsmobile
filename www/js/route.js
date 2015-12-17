@@ -11,8 +11,8 @@ cms.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: "view/menuPage.html",
             controller: "menuController"
         })
-     .state("detail", {
-            url: "/detail",
+     .state("cakedetail", {
+            url: "/cakedetail",
             templateUrl: "view/cakeDetail.html",
             controller: "cakedetailController"
         })
