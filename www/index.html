@@ -14,6 +14,7 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="https://code.angularjs.org/1.3.15/angular-route.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -27,7 +28,7 @@
     <script src="js/controller/mainController.js"></script>
 
   </head>
-  <body ng-app="cms" ng-controller="mainControllers">
+  <body ng-app="cms" ng-controller="mainController"> 
     <ion-pane>
     <ion-nav-bar class="bar-stable">
       <ion-nav-back-button>
@@ -36,7 +37,7 @@
      <ion-nav-view></ion-nav-view>
 
     <div id="myTab" class="tabs-striped  has-tabs tabs-color-calm">
-        <div class="tabs triipme-color">
+        <div class="tabs ">
           <a id="menuTab" class="tab-item active" href="#home" ng-click="viewMenu()">
             <i class="icon ion-home"></i>
             Menu
