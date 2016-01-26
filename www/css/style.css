@@ -3,3 +3,33 @@
   font-size: 64px;
   color : red;
 }
+.side-avatar {
+	top: 4px !important;
+}
+.blue{
+	color: #4DADAF !important;
+}
+.name-menu{
+	display: inline !important;
+}
+.status-menu{
+	float:right !important;
+}
+.price-menu{
+	font-size: 15px !important;
+}
+.price-div-menu{
+	padding-top: 10px !important;
+}
+.top-padding-15{
+	padding-top: 15px !important;
+}
+.padding-left-15{
+	padding-left: 15px !important;
+}
+.font-large{
+	font-size: large;
+}
+.pull-right{
+	text-align: right !important;
+}
