@@ -1,39 +1,39 @@
 <ion-view style="background-color: #F2F2F2" title="Home">
     <div class="tabs tabs-striped tabs-top tabs-color-balanced">
-        <a id="menuTab" class="tab-item active font-large">
+        <a id="tab-all" class="tab-item active font-large" ng-click="filterAll()">
 Tất cả                    </a>
-        <a id="dealTab" class="tab-item font-large">
+        <a id="tab-today"class="tab-item font-large" ng-click="filterToday()">
 Hôm nay                    </a>
-        <a id="newsTab" class="tab-item font-large">
+        <a  id="tab-week"class="tab-item font-large" ng-click="filterThisWeek()">
 Tuần này                    </a>
-        <a id="recipeTab" class="tab-item font-large">
+        <a  id="tab-hot"class="tab-item font-large" ng-click="filterHot()">
 Hot                    </a>
     </div>
     <ion-content class="has-tabs-top has-tabs">
         <div class="list card">
-            <div ng-repeat="cake in cakes" class="card-padding">
+            <div ng-repeat="cake in filteredCakes" class="card-padding">
                 <div class="item item-divider">
-                    <h2 class="blue name-menu">{{cake.Name}}</h2>
-                    <h2 class="blue status-menu">Còn hàng</h2>
+                    <h2 class="dark-green name-menu">{{cake.Name}}</h2>
+                    <h2 class="dark-green status-menu">Còn hàng</h2>
                 </div>
                 <div class="item item-text-wrap">
                     <img class="full-image" ng-src="{{cake.Image}}" ng-click="cakeDetail()">
                     <div class="row">
                         <div class="text-left">
-                            <button class="button button-icon blue">
+                            <button class="button button-icon positive">
                                 <span>3</span>
                                 <i class="icon ion-thumbsup"></i>
                             </button>
-                            <button class="button button-icon blue">
+                            <button class="button button-icon positive">
                                 <span>10</span>
                                 <i class="icon ion-share"></i>
                             </button>
-                            <button class="button button-icon blue">
+                            <button class="button button-icon positive">
                                 <i class="icon ion-ios-heart"></i>
                             </button>
                         </div>
                         <div class="text-right col price-div-menu">
-                            <p class="blue price-menu">{{cake.Price}} VNĐ</p>
+                            <p class="dark-green price-menu">{{cake.Price}} VNĐ</p>
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@ Hot                    </a>
                         </label>
                     </div>
                     <div class="col pull-right">
-                        <button class="button button-small button-balanced">
+                        <button class="button button-small button-assertive full-width">
                             Thêm vào giỏ hàng
                         </button>
                     </div>

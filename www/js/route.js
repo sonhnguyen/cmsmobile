@@ -3,52 +3,61 @@ cms.config(function($stateProvider, $urlRouterProvider) {
 
     // Each state's controller can be found in controllers.js
     $stateProvider
-
-        .state("menu", {
-            url: "/menu",
-            templateUrl: "view/menuPage.html",
-            controller: "menuController"
+        .state('tab', {
+            url: '/tab',
+            abstract: true,
+            templateUrl: 'view/tabs.html'
         })
-        .state("cakedetail", {
+        .state('tab.menu', {
+            url: '/menu',
+            views: {
+                'tab-menu': {
+                    templateUrl: 'view/menuPage.html',
+                    controller: 'menuController'
+                }
+            }
+        })
+        .state('tab.deal', {
+            url: '/deal',
+            views: {
+                'tab-deal': {
+                    templateUrl: 'view/dealPage.html',
+                    controller: 'dealController'
+                }
+            }
+        })
+        .state('tab.news', {
+            url: '/news',
+            views: {
+                'tab-news': {
+                    templateUrl: 'view/newsPage.html',
+                    controller: 'dealController'
+                }
+            }
+        })
+        .state('tab.recipe', {
+            url: '/recipe',
+            views: {
+                'tab-recipe': {
+                    templateUrl: 'view/recipePage.html',
+                    controller: 'recipeController'
+                }
+            }
+        })
+        .state('tab.cart', {
+            url: '/cart',
+            views: {
+                'tab-cart': {
+                    templateUrl: 'view/cartPage.html',
+                    controller: 'cartController'
+                }
+            }
+        })
+
+    .state("cakedetail", {
             url: "/cakedetail",
             templateUrl: "view/cakeDetail.html",
             controller: "cakedetailController"
-        })
-        .state("deal", {
-            url: "/deal",
-            templateUrl: "view/dealPage.html",
-            controller: "dealController"
-        })
-        .state("news", {
-            params: {
-                title: {},
-                content: {}
-            },
-            url: "/news",
-            templateUrl: "view/newsPage.html",
-            controller: "newsController",
-            data: {
-                title: {},
-                content: {}
-            }
-        })
-        .state("recipe", {
-            params: {
-                title: {},
-                content: {}
-            },
-            url: "/recipe",
-            templateUrl: "view/recipePage.html",
-            controller: "recipeController",
-            data: {
-                title: {},
-                content: {}
-            }
-        })
-        .state("cart", {
-            url: "/cart",
-            templateUrl: "view/cartPage.html",
-            controller: "cartController"
         })
         .state("addNews", {
             params: {
@@ -105,6 +114,6 @@ cms.config(function($stateProvider, $urlRouterProvider) {
         });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/tab/menu');
 
 });

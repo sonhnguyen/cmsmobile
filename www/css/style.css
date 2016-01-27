@@ -6,8 +6,11 @@
 .side-avatar {
 	top: 4px !important;
 }
-.blue{
-	color: #4DADAF !important;
+.full-width{
+	width: 100% !important;
+}
+.dark-green{
+	color: #00600E !important;
 }
 .name-menu{
 	display: inline !important;

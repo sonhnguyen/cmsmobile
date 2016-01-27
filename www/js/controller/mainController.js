@@ -17,7 +17,7 @@ cms.controller('mainController', ['$scope', '$state', '$ionicPopover', '$ionicPo
         $('#newsTab').removeClass('active');
         $('#recipeTab').removeClass('active');
         $('#cartTab').removeClass('active');
-
+        console.log("view deal");
     };
     $scope.viewNews = function($event) {
         $('#menuTab').removeClass('active');
@@ -43,6 +43,15 @@ cms.controller('mainController', ['$scope', '$state', '$ionicPopover', '$ionicPo
         $('#cartTab').addClass('active');
 
     };
+    $scope.viewSideInfo = function($event){
+        $('#InfoSideTab').addClass('active');
+        $('#CartSideTab').removeClass('active');
+    };
+
+    $scope.viewSideOrder = function($event){
+        $('#InfoSideTab').removeClass('active');
+        $('#CartSideTab').addClass('active');
+    }
 
 
 

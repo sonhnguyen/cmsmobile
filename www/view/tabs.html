@@ -1,0 +1,54 @@
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-balanced">
+            <ion-nav-back-button class="no-text">
+            </ion-nav-back-button>
+            <ion-nav-buttons side="right">
+                <button class="button button-icon button-clear ion-android-more-vertical" menu-toggle="right">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view></ion-nav-view>
+        <ion-tabs class="tabs-striped tabs-color-balanced">
+            <!-- Menu Tab -->
+            <ion-tab title="Menu" icon-off="ion-android-restaurant" icon-on="ion-android-restaurant" href="#/tab/menu">
+                <ion-nav-view name="tab-menu"></ion-nav-view>
+            </ion-tab>
+            <!-- Deal Tab -->
+            <ion-tab title="Khuyến mãi" icon-off="ion-ios-pricetag-outline" icon-on="ion-ios-pricetag" href="#/tab/deal">
+                <ion-nav-view name="tab-deal"></ion-nav-view>
+            </ion-tab>
+            <!--News Tab -->
+            <ion-tab title="Tin tức" icon-off="ion-ios-paper-outline" icon-on="ion-ios-paper" href="#/tab/news">
+                <ion-nav-view name="tab-news"></ion-nav-view>
+            </ion-tab>
+            <!-- Recipe Tab -->
+            <ion-tab title="Công thức" icon-off="ion-ios-list-outline" icon-on="ion-ios-list" href="#/tab/recipe">
+                <ion-nav-view name="tab-recipe"></ion-nav-view>
+            </ion-tab>
+            <!-- Cart Tab -->
+            <ion-tab title="Giỏ hàng" icon-off="ion-ios-cart-outline" icon-on="ion-ios-cart" href="#/tab/cart">
+                <ion-nav-view name="tab-cart"></ion-nav-view>
+            </ion-tab>
+        </ion-tabs>
+    </ion-side-menu-content>
+    <ion-side-menu side="right">
+        <ion-header-bar class="bar-balanced expanded">
+            <div class="title title-left">
+                <span class="item-avatar">
+                    <img class="side-avatar" src="img/perry.png">  
+                  </span> Nguy&#x1EC5;n Ho&#xE0;ng S&#x1A1;n
+            </div>
+        </ion-header-bar>
+        <ion-content class="stable-bg has-expanded-header">
+            <ion-list>
+                <a class="item item-icon-left" ui-sref="menu" nav-clear="" menu-close=""><i class="icon ion-search"></i>Th&#xF4;ng tin</a>
+                <a class="item item-icon-left" ui-sref="menu" nav-clear="" menu-close=""><i class="icon ion-search"></i>&#x110;&#x1A1;n h&#xE0;ng</a>
+                <a class="item item-icon-left" ui-sref="menu" nav-clear="" menu-close=""><i class="icon ion-search"></i>Wish list</a>
+                <a class="item item-icon-left" ui-sref="menu" nav-clear="" menu-close=""><i class="icon ion-search"></i>Feedback</a>
+                <a class="item item-icon-left" ui-sref="menu" nav-clear="" menu-close=""><i class="icon ion-search"></i>Chia s&#x1EBB;</a>
+                <a class="item item-icon-left" ui-sref="menu" nav-clear="" menu-close=""><i class="icon ion-search"></i>Tho&#xE1;t</a>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>
