@@ -8,16 +8,8 @@ cms.controller('cakedetailController', ['$scope','$state','$ionicPopover','$ioni
             function(data) {
                 var cake = data;
 				$scope.myCake = cake;
-    
+    			console.log(cake);
             }
         )
-
-	
-	
-		$scope.backtoMenu = function() {
-			$state.go("menu");
-		}
-
-
 
 }]);

@@ -12,8 +12,9 @@ cms
             }
         )
 
-        $scope.cakeDetail = function(cake) {
-            $state.go("cakedetail",{'cakeId': cake.Key});
+        $scope.cakeDetail = function(cakeId) {
+            console.log("go cake detail",cakeId);
+            $state.go("tab.cakeDetail",{'cakeId': cakeId});
         }
 
         $scope.filterThisWeek = function() {

@@ -53,12 +53,18 @@ cms.config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         })
-
-		.state("cakedetail", {
-            url: "/cakedetail/:cakeId/",
-            templateUrl: "view/cakeDetail.html",
-            controller: "cakedetailController"
-        })
+        .state('tab.cakeDetail', {
+                url: '/cakedetail/:cakeId/',
+                params: {
+                    cakeId: null
+                },
+                views: {
+                    'tab-menu': {
+                        templateUrl: 'view/cakeDetail.html',
+                        controller: 'cakedetailController'
+                    }
+                }
+                            })
         .state("addNews", {
             params: {
                 title: {},

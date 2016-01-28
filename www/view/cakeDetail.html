@@ -1,59 +1,49 @@
 <ion-view style="background-color: #F2F2F2" title="Cake Detail">
-    <button class=" button button-medium button-balanced button ion-android-arrow-back" style="margin-left:5%;margin-top:17%;width:70px;height:"></button>
-    <ion-content  class="has-tabs-top has-tabs blue" style="padding-left:5%;padding-right:5%;">
+    <ion-content class="has-tabs">
         <div class="blue" style="text-align: center">
-          
-            <p style="font-size:20px;color:red;text-align:center" >{{myCake.Name}}</p>
-            <img style="width: 100%;height:100%"src="{{myCake.Image}}"></img>
-               
-                        <div class="text-left " style="display: inline-block;top:-10%;float:left;">
-                            <button class="button button-icon blue " >
-                                <span>3</span>
-                                <i class="icon ion-thumbsup"></i>
-                            </button>
-                            <button class="button button-icon blue ">
-                                <span>10</span>
-                                <i class="icon ion-share"></i>
-                            </button>
-                            <button class="button button-icon blue " >
-                                <i class="icon ion-ios-heart"></i>
-                            </button>
-                        </div>
-                       
-                    <p style="font-size:25px;float:right;color:red" >Giá: {{myCake.Price}}</p>
-                
-
+            <p style="font-size:20px;color:red;text-align:center">{{myCake.Name}}</p>
+            <img style="width: 100%;height:100%" src="{{myCake.Image}}"></img>
+            <div class="text-left " style="display: inline-block;top:-10%;float:left;">
+                <button class="button button-icon blue ">
+                    <span>3</span>
+                    <i class="icon ion-thumbsup"></i>
+                </button>
+                <button class="button button-icon blue ">
+                    <span>10</span>
+                    <i class="icon ion-share"></i>
+                </button>
+                <button class="button button-icon blue ">
+                    <i class="icon ion-ios-heart"></i>
+                </button>
+            </div>
+            <p style="font-size:25px;float:right;color:red">Giá: {{myCake.Price}}</p>
             <div class=" row list ">
-                    <div class=" item item-input" style="width:230px">
-                        <label class="item-input">
-                            <input type="number" placeholder="Số lượng">
-                        </label>
-                    </div>
-                    <div class="col pull-right"style="margin-right:-4%">
-                        <button class="button button-medium button-balanced">
-                            Thêm vào giỏ hàng
-                        </button>
-
-                    </div>
-
-              </div>
-              <p class="red" id="cakedetailStatus" style="float:right;font-size:25px;margin-top:-5%">Còn hàng</p>
+                <div class=" item item-input" style="width:230px">
+                    <label class="item-input">
+                        <input type="number" placeholder="Số lượng">
+                    </label>
+                </div>
+                <div class="col pull-right" style="margin-right:-4%">
+                    <button class="button button-medium button-balanced">
+                        Thêm vào giỏ hàng
+                    </button>
+                </div>
+            </div>
+            <p class="red" id="cakedetailStatus" style="float:right;font-size:25px;margin-top:-5%">Còn hàng</p>
         </div>
         <div id="cakeDescription" style="padding-top: 15%;padding-bottom:15%">
-            Bánh bông lan mềm và xốp. Độ ẩm bánh cao.
-            Mỗi bánh đều có nhân phô mai bên trong bánh.
-            Nhân mặt bánh gồm trứng muối và chà bông gà và sốt cream trứng.
-            </br>   </br>
+            Bánh bông lan mềm và xốp. Độ ẩm bánh cao. Mỗi bánh đều có nhân phô mai bên trong bánh. Nhân mặt bánh gồm trứng muối và chà bông gà và sốt cream trứng.
+            </br>
+            </br>
             Đóng gói : 1 Bánh Khuôn Tròn 16cm / Hộp
-            </br>   </br>
-            Sản phẩm làm từ nguyên liệu loại 1 : bột mì, bơ, sữa tươi, đường, muối, chà bông gà, phô mai, trứng muối và sốt cream trứng.
-            KHÔNG PHỤ GIA - KHÔNG CHẤT BẢO QUẢN
-            </br>   </br>
-            - Nhiệt độ thường : 3-4 ngày
-            - Đậy kín, ngăn mát tủ lạnh:7 ngày
-            Ngon hơn khi dùng nóng, hâm lại trong lò vi sóng với thời gian khoảng 15-20 giây
+            </br>
+            </br>
+            Sản phẩm làm từ nguyên liệu loại 1 : bột mì, bơ, sữa tươi, đường, muối, chà bông gà, phô mai, trứng muối và sốt cream trứng. KHÔNG PHỤ GIA - KHÔNG CHẤT BẢO QUẢN
+            </br>
+            </br>
+            - Nhiệt độ thường : 3-4 ngày - Đậy kín, ngăn mát tủ lạnh:7 ngày Ngon hơn khi dùng nóng, hâm lại trong lò vi sóng với thời gian khoảng 15-20 giây
         </div>
-            <!--
+        <!--
             Ten
             hinh anh
             gia banh
