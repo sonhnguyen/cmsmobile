@@ -1,10 +1,10 @@
 <ion-view style="background-color: #F2F2F2" title="Cake Detail">
     <button class=" button button-medium button-balanced button ion-android-arrow-back" style="margin-left:5%;margin-top:17%;width:70px;height:"></button>
-    <ion-content class="has-tabs-top has-tabs blue" style="padding-left:5%;padding-right:5%;">
+    <ion-content  class="has-tabs-top has-tabs blue" style="padding-left:5%;padding-right:5%;">
         <div class="blue" style="text-align: center">
           
-            <h3   id="cakeName" style="color: green">Trứng muối sốt Cream</h3>
-            <img class="full-image" ng-src="http://capxanh.com/image/cache/data/thuc_pham_sach/12074896_701875169946578_3015985336185203278_n-700x700.jpg" >
+            <p style="font-size:20px;color:red;text-align:center" >{{myCake.Name}}</p>
+            <img style="width: 100%;height:100%"src="{{myCake.Image}}"></img>
                
                         <div class="text-left " style="display: inline-block;top:-10%;float:left;">
                             <button class="button button-icon blue " >
@@ -20,7 +20,7 @@
                             </button>
                         </div>
                        
-                    <p  class="red" style="font-size:25px;float:right">320.000 VNĐ</p>
+                    <p style="font-size:25px;float:right;color:red" >Giá: {{myCake.Price}}</p>
                 
 
             <div class=" row list ">
