@@ -1,42 +1,19 @@
 cms
-    .factory('DataService3', function($q, $timeout) {
-
-        var getCakes = function() {
-
-            var deferred = $q.defer();
-            var list = [];
-            var ref = new Firebase('https://glowing-torch-2466.firebaseio.com/cakes/');
-            ref.once("value", function(snapshot) {
-                snapshot.forEach(function(snap) {
-                    list.push(snap.val());
-                });
-                deferred.resolve(list);
-            }, function(errorObject) {
-                console.log("The read failed: " + errorObject.code);
-            });
-            return deferred.promise;
-        };
-
-        return {
-            getCakes: getCakes
-        }
-    })
 
 .controller('menuController', ['$scope', '$state', '$ionicPopover', '$ionicPopup',
-    '$ionicLoading', '$ionicModal', '$ionicHistory', 'DataService3',
-    function($scope, $state, $ionicPopover, $ionicPopup, $ionicLoading, $ionicModal, $ionicHistory, DataService3) {
+    '$ionicLoading', '$ionicModal', '$ionicHistory', 'CakeService',
+    function($scope, $state, $ionicPopover, $ionicPopup, $ionicLoading, $ionicModal, $ionicHistory, CakeService) {
         $scope.cakes = [];
         $scope.filteredCakes = [];
-        DataService3.getCakes().then(
+        CakeService.getCakes().then(
             function(data) {
                 $scope.cakes = data;
                 $scope.filteredCakes = data;
-                console.log($scope.cakes);
-
             }
         )
-        $scope.cakeDetail = function() {
-            $state.go("cakedetail");
+
+        $scope.cakeDetail = function(cake) {
+            $state.go("cakedetail",{'cakeId': cake.Key});
         }
 
         $scope.filterThisWeek = function() {

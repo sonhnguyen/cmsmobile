@@ -54,8 +54,8 @@ cms.config(function($stateProvider, $urlRouterProvider) {
             }
         })
 
-    .state("cakedetail", {
-            url: "/cakedetail",
+		.state("cakedetail", {
+            url: "/cakedetail/:cakeId/",
             templateUrl: "view/cakeDetail.html",
             controller: "cakedetailController"
         })
