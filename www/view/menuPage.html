@@ -14,7 +14,7 @@ Hot                    </a>
             <div ng-repeat="cake in filteredCakes" class="card-padding">
                 <div class="item item-divider">
                     <h2 class="dark-green name-menu">{{cake.Name}}</h2>
-                    <h2 class="dark-green status-menu">Còn hàng</h2>
+                    <h2 class="dark-green status-menu">{{cake.Status == 1 ? 'Còn hàng' : 'Hết hàng'}}</h2>
                 </div>
                 <div class="item item-text-wrap">
                     <img class="full-image" ng-src="{{cake.Image}}" ng-click="cakeDetail(cake.Key)">

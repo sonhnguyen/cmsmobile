@@ -3,7 +3,7 @@
         <div class="card">
             <div class="item item-divider">
                 <h2 class="dark-green name-menu">{{myCake.Name}}</h2>
-                <h2 class="dark-green status-menu">Còn hàng</h2>
+                <h2 class="dark-green status-menu">{{myCake.Status == 1 ? 'Còn hàng' : 'Hết hàng'}}</h2>
             </div>
             <div class="item item-text-wrap">
                 <a class="item item-list-detail">
@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div>
-                    <p>{{myCake.Description}}</p>
+<span ng-bind-html="cakeDesc"></span>
                 </div>
             </div>
             <div class="item row list padding-left-15">

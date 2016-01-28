@@ -38,11 +38,13 @@
 }
 .image-list-thumb {
     padding: 2px 2px 2px 2px;
-    height: 150px;
+    height: 100px;
+        width: 100px;
+
 }
  
 .image-modal {
-    width: 100% !important;
+    width: 1    00% !important;
     height: 100%;
     top: 0 !important;
     left: 0 !important;
