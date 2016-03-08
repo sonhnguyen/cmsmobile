@@ -1,24 +1,12 @@
 <a class="button ion-plus button-calm" style="margin-top:50px;margin-left:50px" ng-click="addNews()"></a>
-<ion-view title="Tin Tức">
-<ion-content style="margin-top:120px; margin-bottom:50px">
-  <ion-list>
-    <ion-item ng-repeat="news in listnews">
-        <a class="item item-thumbnail-left" ng-click="showNews($index)" href="#">
-	      <img ng-src="{{news.Image}}">
-	      <h2>{{news.Title}}</h2>
-	      <p>{{news.Content}}</p>
-    	</a>
-    	<div class="item tabs tabs-secondary tabs-icon-left">
-                    <a class="tab-item" ng-click="like($index)"> <!-- ng-click="likeBlog(item)" -->
-                        <i class="icon ion-thumbsup"></i>
-                        {{news.like}}
-                    </a>
-                    <a class="tab-item" ng-click="share()"> <!-- ng-click="shareBlog(item)" -->
-                        <i class="icon ion-share"></i>
-                        Share
-                    </a>
-            </div>    
-    </ion-item>
-  </ion-list>
-</ion-content>
+<ion-view title="Tin Tức" style="background-color: #F2F2F2">
+    <ion-content>
+        <div class="list">
+            <a ng-repeat="news in listnews" class="item item-thumbnail-left" ng-click="navigateNewsDetail(news.Key)">
+                <img ng-src="{{ news.Image }}">
+                <h2 class="dark-green name-menu">{{ news.Title }}</h2>
+                <h3>{{ news.Abstract }}</h3>
+            </a>
+        </div>
+    </ion-content>
 </ion-view>

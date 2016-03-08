@@ -1,13 +1,15 @@
 <ion-view style="background-color: #F2F2F2" title="Cake Detail">
     <ion-content class="has-tabs">
+		<div id="xdvloader" style="margin: auto;position: absolute;width: 100%;text-align: center;"><ion-spinner></ion-spinner></div>
+        
         <div class="card">
             <div class="item item-divider">
-                <h2 class="dark-green name-menu">{{myCake.Name}}</h2>
+                <h2 class="dark-green name-menu" >{{myCake.Name}}</h2>
                 <h2 class="dark-green status-menu">{{myCake.Status == 1 ? 'Còn hàng' : 'Hết hàng'}}</h2>
             </div>
             <div class="item item-text-wrap">
                 <a class="item item-list-detail">
-                    <ion-scroll direction="x" class="wide-as-needed">
+                    <ion-scroll direction="x" class="">
                         <img ng-repeat="image in myCake.Gallery" ng-src="{{image}}" ng-click="showImages($index, $parent.$index)" class="image-list-thumb" />
                     </ion-scroll>
                 </a>
@@ -30,17 +32,17 @@
                     </div>
                 </div>
                 <div>
-<span ng-bind-html="cakeDesc"></span>
+                    <span ng-bind-html="cakeDesc"></span>
                 </div>
             </div>
             <div class="item row list padding-left-15">
                 <div class="col item item-input-inset">
                     <label class="item-input-wrapper">
-                        <input type="number" placeholder="Số lượng">
+                        <input type="tel" min="0" id="detailsoluong" placeholder="Số lượng">
                     </label>
                 </div>
                 <div class="col pull-right">
-                    <button class="button button-small button-assertive full-width">
+                    <button class="button button-small button-assertive full-width" ng-click="addtoCart(myCake.Key,myCake.Name,myCake.Image,myCake.Price)">
                         THÊM VÀO GIỎ
                     </button>
                 </div>

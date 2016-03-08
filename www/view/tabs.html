@@ -17,6 +17,11 @@
             <!-- Deal Tab -->
             <ion-tab title="Khuyến mãi" icon-off="ion-ios-pricetag-outline" icon-on="ion-ios-pricetag" href="#/tab/deal">
                 <ion-nav-view name="tab-deal"></ion-nav-view>
+                <ul>
+                    <li class="notification-container">
+                        <span class="notification-counter">1</span>
+                    </li>
+                </ul>
             </ion-tab>
             <!--News Tab -->
             <ion-tab title="Tin tức" icon-off="ion-ios-paper-outline" icon-on="ion-ios-paper" href="#/tab/news">
@@ -34,20 +39,21 @@
     </ion-side-menu-content>
     <ion-side-menu side="right">
         <ion-header-bar class="bar-balanced expanded">
-            <div class="title title-left">
+            <div class="title title-left" ng-show="userName">
                 <span class="item-avatar">
-                    <img class="side-avatar" src="img/perry.png">  
-                  </span> Nguy&#x1EC5;n Ho&#xE0;ng S&#x1A1;n
+                    <img class="side-avatar" src="{{avatar}}">  
+                  </span> {{userName}}
             </div>
         </ion-header-bar>
         <ion-content class="stable-bg has-expanded-header">
             <ion-list>
+
                 <a class="item item-icon-left" ui-sref="menu" nav-clear="" menu-close=""><i class="icon ion-search"></i>Th&#xF4;ng tin</a>
-                <a class="item item-icon-left" ui-sref="menu" nav-clear="" menu-close=""><i class="icon ion-search"></i>&#x110;&#x1A1;n h&#xE0;ng</a>
+                <a class="item item-icon-left" href="#/tab/order" nav-clear="" menu-close="" ng-show="userName"><i class="icon ion-bag"></i>Đơn hàng của tôi</a>
                 <a class="item item-icon-left" ui-sref="menu" nav-clear="" menu-close=""><i class="icon ion-search"></i>Wish list</a>
                 <a class="item item-icon-left" ui-sref="menu" nav-clear="" menu-close=""><i class="icon ion-search"></i>Feedback</a>
                 <a class="item item-icon-left" ui-sref="menu" nav-clear="" menu-close=""><i class="icon ion-search"></i>Chia s&#x1EBB;</a>
-                <a class="item item-icon-left" ui-sref="menu" nav-clear="" menu-close=""><i class="icon ion-search"></i>Tho&#xE1;t</a>
+                <a class="item item-icon-left" nav-clear="" menu-close="" ng-click="logOut()"><i class="icon ion-search"></i>Tho&#xE1;t</a>
             </ion-list>
         </ion-content>
     </ion-side-menu>

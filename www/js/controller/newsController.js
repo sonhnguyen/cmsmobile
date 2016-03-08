@@ -1,5 +1,4 @@
-cms
-.factory('DataService2', function($q, $timeout) {
+cms.factory('DataService2', function($q, $timeout) {
 
     var getNews = function() {
 
@@ -24,15 +23,20 @@ cms
 
 
 .controller('newsController', ['$scope','$state','$ionicPopover','$ionicPopup',
-  '$ionicLoading','$ionicModal','$ionicHistory', 'DataService2', 
-  function ($scope,$state,$ionicPopover,$ionicPopup,$ionicLoading,$ionicModal,$ionicHistory, DataService2) {
+  '$ionicLoading','$ionicModal','$ionicHistory', 'CakeService', 
+  function ($scope,$state,$ionicPopover,$ionicPopup,$ionicLoading,$ionicModal,$ionicHistory,CakeService) {
 		$scope.listnews = [];
-		DataService2.getNews().then(
-			function(news) {
-				$scope.listnews = news;
-			}
-		)
-$ionicModal.fromTemplateUrl('view/addNewsPage.html', function(modal) {
+		CakeService.getNews().then(
+            function(data) {
+                $scope.listnews = data;
+            }
+    )
+    $scope.navigateNewsDetail = function(newsId){
+      console.log("go news detail", newsId);
+
+      $state.go("tab.newsDetail", { 'newsId': newsId });
+    }
+/*$ionicModal.fromTemplateUrl('view/addNewsPage.html', function(modal) {
     $scope.newsModal = modal;
   }, {
     scope: $scope,
@@ -83,6 +87,6 @@ $scope.showNews = function(n)
   //$scope.showNewsModal.content = $scope.listnews[n]['content']
 	//$scope.showNewsModal.show();
   $state.go('showNews',{title:$scope.listnews[n]['Title'], content:$scope.listnews[n]['Content']});
-}
+}*/
 
 }]);

@@ -1,0 +1,34 @@
+<ion-view style="background-color: #F2F2F2" title="Thông tin giao hàng">
+    <ion-content>
+        <div class="list">
+            <label class="item item-input">
+                <input type="text" placeholder="Tên người đặt" ng-model="order.userName" >
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Địa chỉ" ng-model="order.addr" >
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Số điện thoại" ng-model="order.tel" >
+            </label>
+            <label class="item ">
+                <p style="float:left">Ngày giao</p>
+                <input style="float:right; " class="item item-input" type="date" ng-model="order.date" ></input>
+            </label>
+            <!-- <ion-list>
+        <ion-item nav-clear menu-close ng-click="navigatedatePicker()">
+          <i class="ion-home"></i>
+          Datepicker
+        </ion-item>
+      </ion-list> -->
+            <label class="item item-input" style="height: 320px">
+                <textarea placeholder="Ghi chú" style="height: 300px" ng-model="order.desc" ></textarea>
+            </label>
+        </div>
+    </ion-content>
+    <ion-footer-bar>
+        <div class="button-bar">
+            <a class="button button-dark" ng-click="cancelCart()">Hủy</a>
+            <a class="button button-balanced" ng-click="buyCart()">Thanh toán</a>
+        </div>
+    </ion-footer-bar>
+</ion-view>

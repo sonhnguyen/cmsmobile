@@ -2,19 +2,20 @@
     <div class="tabs tabs-striped tabs-top tabs-color-balanced">
         <a id="tab-all" class="tab-item active font-large" ng-click="filterAll()">
 Tất cả                    </a>
-        <a id="tab-today"class="tab-item font-large" ng-click="filterToday()">
+        <a id="tab-today" class="tab-item font-large" ng-click="filterToday()">
 Hôm nay                    </a>
-        <a  id="tab-week"class="tab-item font-large" ng-click="filterThisWeek()">
+        <a id="tab-week" class="tab-item font-large" ng-click="filterThisWeek()">
 Tuần này                    </a>
-        <a  id="tab-hot"class="tab-item font-large" ng-click="filterHot()">
+        <a id="tab-hot" class="tab-item font-large" ng-click="filterHot()">
 Hot                    </a>
+		
     </div>
     <ion-content class="has-tabs-top has-tabs">
+		<div id="dvloader" style="margin: auto;position: absolute;width: 100%;text-align: center;"><ion-spinner></ion-spinner></div>
         <div class="list card">
             <div ng-repeat="cake in filteredCakes" class="card-padding">
-                <div class="item item-divider">
-                    <h2 class="dark-green name-menu">{{cake.Name}}</h2>
-                    <h2 class="dark-green status-menu">{{cake.Status == 1 ? 'Còn hàng' : 'Hết hàng'}}</h2>
+                <div class="item item-b divider">
+                    <p class="microsoft marquee">{{cake.Name}} &nbsp &nbsp{{cake.Status == 1 ? 'Còn hàng' : 'Hết hàng'}} </p>
                 </div>
                 <div class="item item-text-wrap">
                     <img class="full-image" ng-src="{{cake.Image}}" ng-click="cakeDetail(cake.Key)">
@@ -40,11 +41,11 @@ Hot                    </a>
                 <div class="item row list padding-left-15">
                     <div class="col item item-input-inset">
                         <label class="item-input-wrapper">
-                            <input type="number" placeholder="Số lượng">
+                            <input ng-modal="mysl" min="0" id="soluong{{cake.Key}}" type="tel" placeholder="Số lượng">
                         </label>
                     </div>
                     <div class="col pull-right">
-                        <button class="button button-small button-assertive full-width">
+                        <button class="button button-small button-assertive full-width" ng-click="addtoCart(cake.Key,cake.Name,cake.Image,cake.Price)">
                             THÊM VÀO GIỎ
                         </button>
                     </div>

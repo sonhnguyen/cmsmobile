@@ -1,5 +1,29 @@
-<ion-view title="Cart">
-<ion-content >
-
-</ion-content>
+<ion-view style="background-color: #F2F2F2" title="Cart">
+    <ion-content>
+        <ion-list show-delete="shouldShowDelete">
+            <ion-item ng-repeat="cake in cartList" class="item-thumbnail-left padding-16">
+                <img ng-src="{{cake.img}}">
+                <div>
+                    <h2 class="dark-green name-menu wrap item-text-wrap">{{cake.name}}</h2>
+                </div>
+                <p>Số lượng: {{cake.sl}}</p>
+                <p>Đơn giá: {{cake.price}}</p>
+                <h2 class="dark-green bold">Thành tiền: {{cake.price*cake.sl}}VNĐ</h2>
+                <ion-delete-button class="ion-minus-circled" ng-click="cartList.splice($index, 1)">
+                </ion-delete-button>
+            </ion-item>
+        </ion-list>
+        <br>
+        <div class="list" ng-show="cartList.length!==0">
+            <div class="item cart-padding-left">
+                <h2 class="dark-green status-menu wrap bold item-text-wrap">Tổng cộng: {{tongcong}} VNĐ</h2>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar>
+        <div class="button-bar">
+            <a class="button button-positive" ng-if="!authData" ng-click="fbSignIn()">Đăng nhập Facebook để thanh toán</a>
+            <a class="button button-balanced" ng-if="authData" ng-click="navigatecartInfo()">Thanh toán</a>
+        </div>
+    </ion-footer-bar>
 </ion-view>

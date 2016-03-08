@@ -1,21 +1,31 @@
 cms
 
-.controller('menuController', ['$scope', '$state', '$ionicPopover', '$ionicPopup',
+    .controller('menuController', ['$scope', '$state', '$ionicPopover', '$ionicPopup',
     '$ionicLoading', '$ionicModal', '$ionicHistory', 'CakeService',
     function($scope, $state, $ionicPopover, $ionicPopup, $ionicLoading, $ionicModal, $ionicHistory, CakeService) {
         $scope.cakes = [];
         $scope.filteredCakes = [];
+		
         CakeService.getCakes().then(
             function(data) {
                 $scope.cakes = data;
                 $scope.filteredCakes = data;
+				$("#dvloader").hide();
             }
+			
         )
+		
+        $scope.addtoCart = function(myid, myname, myimage, myprice) {
+            var mysl = Number(document.getElementById('soluong' + myid).value);
 
-        $scope.cakeDetail = function(cakeId) {
-            console.log("go cake detail",cakeId);
-            $state.go("tab.cakeDetail",{'cakeId': cakeId});
+            CakeService.setcartCakeList(myid, myname, mysl, myimage, myprice);
+
         }
+        $scope.cakeDetail = function(cakeId) {
+            console.log("go cake detail", cakeId);
+            $state.go("tab.cakeDetail", { 'cakeId': cakeId });
+        }
+		
 
         $scope.filterThisWeek = function() {
             $('#tab-all').removeClass('active');

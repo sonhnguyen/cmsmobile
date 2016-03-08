@@ -6,7 +6,8 @@ cms.config(function($stateProvider, $urlRouterProvider) {
         .state('tab', {
             url: '/tab',
             abstract: true,
-            templateUrl: 'view/tabs.html'
+            templateUrl: 'view/tabs.html',
+            controller: 'tabController'
         })
         .state('tab.menu', {
             url: '/menu',
@@ -31,7 +32,7 @@ cms.config(function($stateProvider, $urlRouterProvider) {
             views: {
                 'tab-news': {
                     templateUrl: 'view/newsPage.html',
-                    controller: 'dealController'
+                    controller: 'newsController'
                 }
             }
         })
@@ -62,6 +63,70 @@ cms.config(function($stateProvider, $urlRouterProvider) {
                 'tab-menu': {
                     templateUrl: 'view/cakeDetail.html',
                     controller: 'cakedetailController'
+                }
+            }
+        })
+        .state('tab.newsDetail', {
+            url: '/newsdetail/:newsId/',
+            params: {
+                newsId: null
+            },
+            views: {
+                'tab-news': {
+                    templateUrl: 'view/newsDetailPage.html',
+                    controller: 'newsdetailController'
+                }
+            }
+        })
+        .state('tab.cartInfo', {
+            url: '/cartInfo/',
+
+            views: {
+                'tab-cart': {
+                    templateUrl: 'view/cartInfo.html',
+                    controller: 'cartInfoController'
+                }
+            }
+        })
+        .state('tab.datepicker', {
+            url: "/datepicker",
+            views: {
+                'tab-cartInfo': {
+                    templateUrl: "view/datepicker.html",
+                    controller: 'datepickerController'
+                }
+            }
+        })
+        .state('tab.dealDetail', {
+            url: '/dealdetail/:dealId',
+            params: {
+                dealId: null
+            },
+            views: {
+                'tab-deal': {
+                    templateUrl: 'view/dealdetailPage.html',
+                    controller: 'dealdetailController'
+                }
+            }
+        })
+        .state('tab.order', {
+            url: '/order',
+            views: {
+                'tab-order': {
+                    templateUrl: 'view/orderPage.html',
+                    controller: 'orderController'
+                }
+            }
+        })
+        .state('tab.orderDetail', {
+            url: '/order/:orderId',
+            params: {
+                orderId: null
+            },
+            views: {
+                'tab-order': {
+                    templateUrl: 'view/orderDetailPage.html',
+                    controller: 'orderDetailController'
                 }
             }
         })
