@@ -4,9 +4,10 @@ cms.controller('dealdetailController',
         '$ionicLoading', '$ionicModal', '$ionicHistory', '$stateParams',
         'CakeService', '$ionicSlideBoxDelegate', '$ionicScrollDelegate',
         function($scope, $state, $ionicPopover, $ionicPopup, $ionicLoading, $ionicModal, $ionicHistory, $stateParams, CakeService, $ionicSlideBoxDelegate, $ionicScrollDelegate) {
-            dealId = $stateParams['dealId'];
+            $("#dealdetailcard").hide();
+			dealId = $stateParams['dealId'];
             $scope.zoomMin = 1;
-
+			
             CakeService.getDealByID(dealId).then(
                 function(data) {
                     var deal = data;
@@ -16,7 +17,9 @@ cms.controller('dealdetailController',
                     
                     $scope.dealImage= $scope.myDeal.Image;
                     
-                    
+                    $("#dealdetailloader").hide();
+					$("#dealdetailsloader").hide();
+					$("#dealdetailcard").show();
                 }
             )
         //     $scope.addtoCart = function(id,name,image,price){

@@ -1,5 +1,35 @@
 <ion-view style="background-color: #F2F2F2" title="Các đơn hàng">
     <ion-content>
-    hi
+        <ion-list>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Lọc đơn hàng theo trạng thái 
+                </div>
+                <select ng-model="filter">
+                    <option value="">Hãy chọn trạng thái</option>
+                    <!-- not selected / blank option -->
+                    <option value="Chờ xác nhận">Chờ xác nhận</option>
+                    <option value="Đã nhận bánh">Đã nhận bánh</option>
+                </select>
+
+            </label>    
+            <div class="item col-header item-icon-right">
+                <div class="flex-container wrap">
+                    <div ng-repeat="column in data.columns" ng-click="sortBy(column.id)">
+                        <div class="column dark-green" ng-class="{ 'underlined' : data.sortOn === column.id }">{{column.name}}</div>
+                        <div class="column-sort">
+                            <i ng-class="{'ion-chevron-up' : data.sortReverse === false, 'ion-chevron-down' : data.sortReverse === true} " ng-if="data.sortOn === column.id"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item low-pad-item" ng-repeat="item in data.items | orderBy:sortData:data.sortReverse ">
+                <div class="flex-container wrap" ng-if="!filter||filter==item.Status">
+                    <div ng-repeat="column in data.columns">
+                        <div class="column" >{{item[column.id]}}</div>
+                    </div>
+                </div>
+            </div>
+        </ion-list>
     </ion-content>
 </ion-view>

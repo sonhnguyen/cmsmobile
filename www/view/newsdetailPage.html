@@ -1,37 +1,25 @@
-<ion-view style="background-color: #F2F2F2" title="News Detail">
+<ion-view style="background-color: #F2F2F2" title="Tin tức chi tiết">
     <ion-content class="has-tabs">
-		<div id="xdvloader">            <ion-spinner></ion-spinner>
-</div>
-        
-        <div class="card">
+        <div id="newsdetailsloader" style="height:100px;width:100%;"></div>
+        <div id="newsdetailloader" style="margin: auto;position: absolute;width: 100%;text-align: center;">
+            <ion-spinner></ion-spinner>
+        </div>
+        <div class="card" id="newdetailcard">
             <div class="item item-divider">
-                <h2 class="dark-green name-menu">{{myNews.Title}}</h2>
-                
+                <h2 class="dark-green name-menu" style="font-weight:bold;white-space:initial">{{myNews.Title}}</h2>
+                <p style="font-size:10px">Ngày đăng: {{myNews.DatePosted}}</p>
             </div>
             <div class="item item-text-wrap">
                 <div>
-                    <image src="{{myNews.Image}}"></image>
+                    <image class="full-image" src="{{myNews.Image}}"></image>
                     <span>{{myNews.Abstract}}</span>
-                </br></br></br>
-                    <span>{{myNews.Content}}</span>
+                    </br>
+                    </br>
+                    </br>
+                    <span id="tqduy" ng-bind-html="dealContent"></span>
                 </div>
             </div>
-                            <div class="row">
-                    <div class="text-left">
-                        <button class="button button-icon positive">
-                            <span>3</span>
-                            <i class="icon ion-thumbsup"></i>
-                        </button>
-                        <button class="button button-icon positive">
-                            <span>10</span>
-                            <i class="icon ion-share"></i>
-                        </button>
-                        <button class="button button-icon positive">
-                            <i class="icon ion-ios-heart"></i>
-                        </button>
-                    </div>
-
-                </div>
-
+            <!-- <button ng-click="myFunction()">Try it</button> -->
+        </div>
     </ion-content>
 </ion-view>

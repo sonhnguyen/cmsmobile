@@ -5,7 +5,7 @@ cms.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('tab', {
             url: '/tab',
-            abstract: true,
+           
             templateUrl: 'view/tabs.html',
             controller: 'tabController'
         })
@@ -66,18 +66,7 @@ cms.config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         })
-        .state('tab.newsDetail', {
-            url: '/newsdetail/:newsId/',
-            params: {
-                newsId: null
-            },
-            views: {
-                'tab-news': {
-                    templateUrl: 'view/newsDetailPage.html',
-                    controller: 'newsdetailController'
-                }
-            }
-        })
+        
         .state('tab.cartInfo', {
             url: '/cartInfo/',
 
@@ -109,6 +98,32 @@ cms.config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         })
+        .state('tab.newsDetail', {
+            url: '/newsdetail/:newsId/',
+            params: {
+                newsId: null
+            },
+            views: {
+                'tab-news': {
+                    templateUrl: 'view/newsdetailPage.html',
+                    controller: 'newsdetailController'
+                }
+            }
+        })
+
+        .state('tab.recipeDetail', {
+            url: '/recipedetail/:recipeId/',
+            params: {
+                recipeId: null
+            },
+            views: {
+                'tab-recipe': {
+                    templateUrl: 'view/recipedetailPage.html',
+                    controller: 'recipedetailController'
+                }
+            }
+        })
+        
         .state('tab.order', {
             url: '/order',
             views: {
@@ -119,7 +134,7 @@ cms.config(function($stateProvider, $urlRouterProvider) {
             }
         })
         .state('tab.orderDetail', {
-            url: '/order/:orderId',
+            url: '/orderDetail/:orderId',
             params: {
                 orderId: null
             },
@@ -130,59 +145,33 @@ cms.config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         })
-        .state("addNews", {
-            params: {
-                title: {},
-                content: {}
-            },
-            url: "/addNews",
-            templateUrl: "view/addNewsPage.html",
-            controller: "addNewsController",
-            data: {
-                title: {},
-                content: {}
+        .state('tab.profile', {
+            url: '/profile',
+            views: {
+                'tab-profile': {
+                    templateUrl: 'view/profilePage.html',
+                    controller: 'profileController'
+                }
             }
         })
-        .state("showNews", {
-            params: {
-                title: {},
-                content: {}
-            },
-            url: "/showNews",
-            templateUrl: "view/showNewsPage.html",
-            controller: "showNewsController",
-            data: {
-                title: {},
-                content: {}
-            }
-        })
-        .state("addRecipe", {
-            params: {
-                title: {},
-                content: {}
-            },
-            url: "/addRecipe",
-            templateUrl: "view/addRecipePage.html",
-            controller: "addRecipeController",
-            data: {
-                title: {},
-                content: {}
-            }
-        })
-        .state("showRecipe", {
-            params: {
-                title: {},
-                content: {}
-            },
-
-            url: "/showRecipe",
-            templateUrl: "view/showRecipePage.html",
-            controller: "showRecipeController",
-            data: {
-                title: {},
-                content: {}
-            }
-        });
+		.state('tab.feedback', {
+			url: '/feedback',
+			views: {
+				'tab-feedback': {
+					templateUrl: 'view/feedbackPage.html',
+					controller: 'feedBackController'
+				}
+			}
+		})
+		.state('tab.wish', {
+			url: '/wish',
+			views: {
+				'tab-wish': {
+					templateUrl: 'view/wishPage.html',
+					controller: 'wishController'
+				}
+			}
+		})
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/tab/menu');

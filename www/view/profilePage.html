@@ -1,0 +1,30 @@
+<ion-view style="background-color: #F2F2F2" title="Thông tin">
+    <ion-content>
+        <div class="content">
+            <div class="profile-info">
+                <img class="profile-image" src="{{profile.Img}}">
+                <h3 class="bold profile-name">{{profile.Name}}</h3>
+                <span class="profile-description">Người dùng</span>
+            </div>
+            <div class="item item-divider">
+                Cập nhật thông tin cá nhân
+            </div>
+            <div class="list">
+                <label class="item item-input">
+                    <input type="text" placeholder="Tên của bạn" ng-model="profile.Name">
+                </label>
+                <label class="item item-input">
+                    <input type="text" placeholder="Địa chỉ" ng-model="profile.Address">
+                </label>
+                <label class="item item-input">
+                    <input type="tel" placeholder="Số điện thoại" ng-model="profile.PhoneNumber">
+                </label>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar>
+        <div class="button-bar">
+            <a class="button button-balanced" ng-click="updateProfile()" >Cập nhật</a>
+        </div>
+    </ion-footer-bar>
+</ion-view>

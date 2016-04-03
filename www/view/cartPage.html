@@ -1,22 +1,29 @@
-<ion-view style="background-color: #F2F2F2" title="Cart">
+<ion-view style="background-color: #F2F2F2" title="Giỏ hàng">
     <ion-content>
-        <ion-list show-delete="shouldShowDelete">
-            <ion-item ng-repeat="cake in cartList" class="item-thumbnail-left padding-16">
+        <ion-list can-swipe="true">
+            <ion-item ng-repeat="cake in cartList" class="item-thumbnail-left item-icon-right">
                 <img ng-src="{{cake.img}}">
                 <div>
                     <h2 class="dark-green name-menu wrap item-text-wrap">{{cake.name}}</h2>
                 </div>
                 <p>Số lượng: {{cake.sl}}</p>
-                <p>Đơn giá: {{cake.price}}</p>
-                <h2 class="dark-green bold">Thành tiền: {{cake.price*cake.sl}}VNĐ</h2>
-                <ion-delete-button class="ion-minus-circled" ng-click="cartList.splice($index, 1)">
-                </ion-delete-button>
+                <p>Đơn giá: {{cake.price|currency:'':0}} VNĐ</p>
+                <h2 class="dark-green bold">Thành tiền: {{cake.price*cake.sl|currency:'':0}} VNĐ</h2>
+                <i class="icon ion-chevron-left icon-accessory"></i>
+                <ion-option-button class="icon-left ion-plus button-positive" ng-click="cartAddQuantity(cake.id,cake.name,cake.img,cake.price)"></ion-option-button>
+                <ion-option-button class="icon-left ion-minus button-dark" ng-click="cartRemoveQuantity(cake.id,cake.name,cake.img,cake.price)"></ion-option-button>
+                <ion-option-button class="icon-left ion-trash ion-trash-b button-assertive" ng-click="removefromCart(cake.id)"></ion-option-button>
             </ion-item>
         </ion-list>
         <br>
-        <div class="list" ng-show="cartList.length!==0">
-            <div class="item cart-padding-left">
-                <h2 class="dark-green status-menu wrap bold item-text-wrap">Tổng cộng: {{tongcong}} VNĐ</h2>
+        <div class="list" ng-if="cartList.length!==0">
+            <div class="item cart-padding-left ">
+                <p class="dark-green status-menu wrap bold item-text-wrap">Tổng cộng: {{tongcong|currency:'':0}} VNĐ</p>
+            </div>
+        </div>
+        <div class="list" ng-if="cartList.length==0">
+            <div class="item text-center">
+                <p class="dark-green wrap bold item-text-wrap">Chưa có sản phẩm nào được thêm vào giỏ</p>
             </div>
         </div>
     </ion-content>

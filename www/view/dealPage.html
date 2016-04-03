@@ -1,15 +1,17 @@
 <ion-view style="background-color: #F2F2F2" title="Khuyến Mãi">
-    <ion-content class="has-tabs-top has-tabs">
-          <div class="list">
+    <ion-content class="has-tabs">
+		<div id="dealsloader" style="height:100px;width:100%;"></div>
+        <div id="dealloader" style="margin: auto;position: absolute;width: 100%;text-align: center;"><ion-spinner></ion-spinner></div>
+		<ion-refresher pulling-text="" on-refresh="doRefresh()"> </ion-refresher>
+		<div id="dealemptydiv" class="full-width" style="width:60px;text-align: center;"><p class ="dark-green name-menu"> Trang khuyến mãi đang trống</p></div>
+		<div class="list" id="deallist">
+			<a ng-repeat="deal in deals" class="item item-thumbnail-left" ng-click="dealDetail(deal.Key)">
 
-        <a ng-repeat="deal in deals" class="item item-thumbnail-left" ng-click="dealDetail(deal.Key)">
-
-          <img ng-src="{{ deal.Image }}" >
-          <h2 class="dark-green name-menu">{{ deal.Title }}</h2>
-          <h3>{{ deal.Abstract }}</h3>
-        </a>
-
-      </div>
+				<img ng-src="{{ deal.Image }}" >
+				<h2 class="dark-green name-menu">{{ deal.Title }}</h2>
+				<div><p style="white-space:initial">{{ deal.Abstract }}</p></div>
+			</a>
+		</div>
 
     </ion-content>
 </ion-view>

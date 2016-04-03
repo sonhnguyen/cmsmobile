@@ -1,8 +1,8 @@
-<ion-view style="background-color: #F2F2F2" title="Cake Detail">
+<ion-view style="background-color: #F2F2F2" title="Thông tin bánh">
     <ion-content class="has-tabs">
+		<div id="cakedetailloader" style="height:100px;width:100%;"></div>
 		<div id="xdvloader" style="margin: auto;position: absolute;width: 100%;text-align: center;"><ion-spinner></ion-spinner></div>
-        
-        <div class="card">
+        <div class="card" id="cakedetailcard">
             <div class="item item-divider">
                 <h2 class="dark-green name-menu" >{{myCake.Name}}</h2>
                 <h2 class="dark-green status-menu">{{myCake.Status == 1 ? 'Còn hàng' : 'Hết hàng'}}</h2>
@@ -15,20 +15,20 @@
                 </a>
                 <div class="row">
                     <div class="text-left">
-                        <button class="button button-icon positive">
-                            <span>3</span>
-                            <i class="icon ion-thumbsup"></i>
+                        <button class="button button-icon positive" ng-click="addCakeLike(myCake.Key)">
+                            <span class ="dark-green name-menu">{{myCake.Likes.length - 2}}</span>
+                            <image class="sidemenuimage" src="/img/like.png"></image>
                         </button>
-                        <button class="button button-icon positive">
-                            <span>10</span>
-                            <i class="icon ion-share"></i>
+                        <button class="button button-icon positive" ng-click="addCakeShare(myCake.Key)">
+                            <span class ="dark-green name-menu">{{myCake.Shares.length - 2}}</span>
+                            <image class="sidemenuimage" src="/img/share.png"></image>
                         </button>
-                        <button class="button button-icon positive">
-                            <i class="icon ion-ios-heart"></i>
+                        <button class="button button-icon positive" ng-click="addCakeFavorite()">
+                            <image class="sidemenuimage" src="/img/heart.png"></image>
                         </button>
                     </div>
                     <div class="text-right col price-div-menu">
-                        <p class="dark-green price-menu">{{myCake.Price}} VNĐ</p>
+                        <p class="dark-green price-menu" style="font-weight: bold;">{{myCake.Price|currency:'':0}} VNĐ</p>
                     </div>
                 </div>
                 <div>

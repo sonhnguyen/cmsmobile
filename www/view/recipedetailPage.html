@@ -1,0 +1,23 @@
+<ion-view style="background-color: #F2F2F2" title="Công thức">
+    <ion-content class="has-tabs">
+        <div id="recipedetailsloader" style="height:100px;width:100%;"></div>
+        <div id="recipedetailloader" style="margin: auto;position: absolute;width: 100%;text-align: center;">
+            <ion-spinner></ion-spinner>
+        </div>
+        </div>
+        <div class="card" id="recipedetailcard">
+            <div class="item item-divider">
+                <h2 class="dark-green name-menu" style="font-weight:bold;white-space:initial">{{myRecipe.Title}}</h2>
+            </div>
+            <div class="item item-text-wrap">
+                <div>
+                    <image class="full-image" src="{{myRecipe.Image}}"></image>
+                    <span>{{myRecipe.Abstract}}</span>
+                    </br>
+                    </br>
+                    </br>
+                    <span id="myRecipeContent" ng-bind-html="recipeContent"></span>
+                </div>
+            </div>
+    </ion-content>
+</ion-view>

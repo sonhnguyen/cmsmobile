@@ -1,0 +1,24 @@
+<ion-view style="background-color: #F2F2F2" title="Góp ý">
+	<ion-content>
+		<div class="card" id="feedbackhiddencard"> </div>
+		<div class="card" id="feedbackhiddencard2"> </div>
+		<div class="card" id="feedbackhiddencard3"> </div>
+		<div class="card" >
+			<form id="myForm" class="list" >
+				<label class="item item-input">
+					<input type="text" placeholder="Tiêu đề" ng-model="feedback.Title">
+				</label>
+				<p style="height:15px;"></p>
+				<label class="item item-input" style="height: 400px">
+		            <textarea placeholder="Nội dung" style="height: 380px" type="text" ng-model="feedback.Content"></textarea>
+		        </label>
+			</form>
+		</div>
+		<div class="card" >
+			<div class="button-bar">
+					<a class="button button-dark" ng-click="resetFeed()">Hủy</a>
+					<a class="button button-balanced" ng-click="sendFeed()">Gửi</a>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

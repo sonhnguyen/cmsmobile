@@ -1,34 +1,117 @@
 /* Empty. Add your own CSS if you like */
-
+.sidemenuimage{
+  width:30px;height: 30px
+}
+.tabs .tab-item .icon.menuicon {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('../img/menu.png');
+  background-size:contain;
+}
+.tabs .tab-item .icon.shareicon {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('img/share.png');
+  background-size:contain;
+}
+.tabs .tab-item .icon.carticon {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('../img/cart.png');
+  background-size:contain;
+}
+.tabs .tab-item .icon.dealicon {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('../img/deal.png');
+  background-size:contain;
+}
+.tabs .tab-item .icon.newsicon {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('../img/news.png');
+  background-size:contain;
+}
+.favouriteicon {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('img/favourite.png');
+  background-size:contain;
+}
+.tabs .tab-item .icon.feedbackicon {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('img/feedback.png');
+  background-size:contain;
+}
+.tabs .tab-item .icon.hearticon {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('img/heart.png');
+  background-size:contain;
+}
+.tabs .tab-item .icon.likeicon {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('img/like.png');
+  background-size:contain;
+}
+.tabs .tab-item .icon.loginicon {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('img/login.png');
+  background-size:contain;
+}
+.tabs .tab-item .icon.recipeicon {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url('../img/recipe.png');
+  background-size:contain;
+}
 .custom-icon {
     font-size: 64px;
     color: red;
 }
+.centerImage{
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
 .notification-container {
     position: relative;
     width: 16px;
     height: 16px;
     top: 15px;
     left: 15px;
-    
     i {
         color: #fff;
     }
 }
-
-.notification-counter {   
+.text-center{
+    text-align: center !important;
+}
+.notification-counter {
     position: absolute;
     top: -2px;
     left: 12px;
-    
     background-color: rgba(212, 19, 13, 1);
     color: #fff;
     border-radius: 3px;
     padding: 1px 3px;
     font: 8px Verdana;
 }
-
-
 
 .side-avatar {
     top: 4px !important;
@@ -37,7 +120,14 @@
 .full-width {
     width: 100% !important;
 }
+.text-center{
+    text-align: center !important;
+}
 
+.menu-image{
+    width:50%!important;
+    height: :50% !important;
+}
 .dark-green {
     color: #00600E !important;
 }
@@ -115,35 +205,215 @@
     background-repeat: no-repeat;
     background-position: center, center;
 }
-.cart-padding-left{
+
+.cart-padding-left {
     padding-left: 156px;
 }
-.padding-16{
+
+.padding-16 {
     padding: 16px;
 }
-.cart-footer-button{
 
+.cart-footer-button {
     right: 0 !important;
     left: 0!important;
 }
 
+.green-capxanh{
+        color: #33cd5f !important;
+
+}
+
 /* Make it a marquee */
+
 .marquee {
     width: 100%;
     margin: 0 auto;
     overflow: hidden;
     white-space: nowrap;
     box-sizing: border-box;
-    animation: marquee 7s ease-in infinite;
+    animation: marquee 4s linear infinite;
 }
 
 .marquee:hover {
-  animation-play-state: paused
+    animation-play-state: paused
 }
+
 
 /* Make it move */
+
 @keyframes marquee {
-    0%   { text-indent: 30em }
-    100% { text-indent: -30em }
+    0% {
+        text-indent: 10em
+    }
+    100% {
+        text-indent: -10em
+    }
 }
 
+
+/** For the flexbox table of Order page **/
+
+.flex-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: none;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.wrap {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 320px) {
+    .flex-container.wrap > div {
+        width: 50%;
+        max-width: 50%;
+        text-overflow: '';
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 321px) {
+    .flex-container.wrap > div {
+        width: 33%;
+        max-width: 33%;
+        text-overflow: '';
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 480px) {
+    .flex-container.wrap > div {
+        width: 25%;
+        max-width: 25%;
+        text-overflow: '';
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 640px) {
+    .flex-container.wrap > div {
+        width: 20%;
+        max-width: 20%;
+        text-overflow: '';
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 960px) {
+    .flex-container.wrap > div {
+        width: 15%;
+        max-width: 15%;
+        text-overflow: '';
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+
+.low-pad-item {
+    padding: 0;
+    margin: 0;
+}
+
+.col-header {
+    font-weight: bold;
+}
+
+.column {
+    text-overflow: '';
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 87%;
+    float: left;
+    padding: 2px 5px;
+}
+
+.col-header > .column {
+    padding: 5px 5px;
+}
+
+.underlined {
+    text-decoration: underline;
+}
+
+.column-sort {
+    min-width: 13%;
+    float: right;
+    text-align: right;
+    padding-right: 2px;
+}
+
+
+/*profile page*/
+
+.profile-bg {
+    position: fixed;
+    left: 0;
+    top: 44px;
+    width: 100%;
+    height: 150px;
+    /*     background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/94311/bg.jpg') no-repeat transparent;*/
+    background-size: 100%;
+    background-position: 50% 20%;
+    text-align: center;
+}
+
+.content {
+    position: relative;
+    background-color: #4F4F4F;
+    box-shadow: 0px -1px 10px rgba(0, 0, 0, 0.4);
+    padding-top: 250px;
+}
+
+.profile-info {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+}
+
+.profile-name {
+    color: #33cd5f;
+    font-size: 26px;
+}
+
+.profile-description {
+    font-size: 15px;
+    color: white;
+}
+
+.profile-description a {
+    color: #33cd5f;
+}
+
+.profile-image {
+    display: block;
+    border-radius: 100px;
+    border: 1px solid #fff;
+    width: 128px;
+    height: 128px;
+    margin: 15px auto 0;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
+}
+
+.list-item-content {
+    padding: 5px;
+}
+
+.list-item {
+    color: #666666;
+}

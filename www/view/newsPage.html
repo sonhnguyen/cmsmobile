@@ -1,11 +1,14 @@
-<a class="button ion-plus button-calm" style="margin-top:50px;margin-left:50px" ng-click="addNews()"></a>
 <ion-view title="Tin Tức" style="background-color: #F2F2F2">
     <ion-content>
         <div class="list">
-            <a ng-repeat="news in listnews" class="item item-thumbnail-left" ng-click="navigateNewsDetail(news.Key)">
+			<div id="newssloader" style="height:100px;width:100%;"></div>
+            <div id="newsloader" style="margin: auto;position: absolute;width: 100%;text-align: center;"><ion-spinner></ion-spinner></div>
+			<ion-refresher pulling-text="" on-refresh="doRefresh()"> </ion-refresher>
+			<div id="newsemptydiv" class="full-width" style="width:60px;text-align: center;"><p class ="dark-green name-menu"> Trang tin tức đang trống</p></div>
+            <a ng-repeat="news in listnews" id="newslist" class="item item-thumbnail-left" ng-click="navigateNewsDetail(news.Key)">
                 <img ng-src="{{ news.Image }}">
-                <h2 class="dark-green name-menu">{{ news.Title }}</h2>
-                <h3>{{ news.Abstract }}</h3>
+                <h2 class="dark-green name-menu" style="white-space:initial">{{ news.Title }}</h2>
+                <div><p style="white-space:initial">{{ news.Abstract }}</p></div>
             </a>
         </div>
     </ion-content>
